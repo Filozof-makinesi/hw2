@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="UTF-8">
+    <title>JavaScript Konu Anlatımı</title>
+    <link rel="stylesheet" type="text/css" href="css\css.css">
+	<link rel="icon" type="image/x-icon" href="assets\pexels-photo-3361230.jpeg">
+</head>
+<body style="padding: 20px">
+
+<div class="nav-wrapper">
+<span class="dekor"></span>
+<nav>
+<ul class="menubar">
+<li><a href="">Çalışma 2 Örnekler</a>
+<ul class="alt-menu">
+<li><a href="pages\dinamik_eleman_ekleme.html" target="iframe_a">Dinamik Eleman Ekleme</a>
+</li>
+<li><a href="pages\adamasmaca.html" target="iframe_a">Adam Asmaca</a>
+</li>
+<li><a href="pages\Kullaniciformu.html" target="iframe_a">Kullanıcı Formu</a>
+</li>
+<li><a href="pages\alişveriş_listesi.html" target="iframe_a">Alışveriş Listesi</a></li>
+</ul>
+</li>
+
+
+</ul>
+</nav>
+</div>
+
+
+
+<h1 class="title">JavaScript Konu Anlatımı</h1>
+<div class="tabContainer">
+    <div class="buttonContainer">
+        <button onclick="showPanel(0,'#f44336')">JavaScript Giriş</button>
+        <button onclick="showPanel(1,'#4caf50')">JavaScript Yazılım (Syntax) yapısı</button>
+        <button onclick="showPanel(2,'#2196f3')">Değişkenler</button>
+        <button onclick="showPanel(3,'#ff5722')">Operatörler</button>
+		<button onclick="showPanel(4,'#492cd8')">Aritmetik</button>
+        <button onclick="showPanel(5,'#14565e')">Veri Tipleri</button>
+        <button onclick="showPanel(6,'#ab6688')">Fonksiyon Yapısı</button>
+        <button onclick="showPanel(7,'#65ce48')">Olaylar (Events)</button>
+		<button onclick="showPanel(8,'#acd309')">Stringler, Sayılar, Diziler ve Diziİşlemleri</button>
+        <button onclick="showPanel(9,'#3209d3')">If koşul yapıları</button>
+        <button onclick="showPanel(10,'#702a74')">Döngüler-Tip Dönüşümleri</button>
+        <button onclick="showPanel(11,'#ff5722')">Çalışma yapısı ve genel mimarisi</button>
+    </div>
+    <div class="tabPanel"><H1>JavaScript Girişi</H1><dd><font size="4" color="black" font-family="times"><dl>
+<blockquote><dt>JavaScript ile VBScript
+<dd>arasında işlev ve yapı bakımından fark yoktur.Kod yazmak için ikisini birden öğrenmeniz şart değil elbette .
+Ama başkalarının kodlarını araştırmak ve bir şeyler öğrenmeye çalışmak gibi harika bir hobiniz varsa, neden 
+ikisini birden öğrenmeyesiniz? Bazı sayfalarda "Şöyleyse VBScript, böyleyse JavaScript öğrenmenizi tavsiye 
+ederim" gibilerinden laflar ediliyor. Ben böyle bir tavsiyede bulunamam açıkçası.Ama şunu bilin, VBScript 
+biraz daha  kolay öğreniliyor gibi. Bununla birlikte JavaScript'in çok daha yaygın olduğu da bir gerçek.
+Visual Basic bilenler VBScript'i daha kolay, C veya Java bilenler, JavaScript'i daha kolay öğrenecektir.Son 
+söyleyeceğim şey,ikisi de basit, dilerseniz her ikisini birden rahatlıkla öğrenebilirsiniz.JavaScript (VBScript)
+HTML'in bir parçasıdır aslında; derleyici bir programa ihtiyaç duymaz, HTML kodlarıyla beraber yazılır ve
+gözatıcı (browser)tarafından yorumlanır.</blockquote></dd></dt></dl></font> <dt><font size="4" color="black"><br><ins>JavaScript'in (VBScript'in) işlevleri yazmakla bitmez, 
+ben aklıma geldiğince listeledim</ins></font> </dt><IMG SRC="pexels-photo-3361230.jpeg" WIDTH="15" HEIGHT="15"> </br>
+  <UL>
+<LI>	HTML tasarımcılarına bir programlama desteği sağlar, bünyesinde değişkenler, fonksiyonlar, döngüler, yordamlar bulundurur. 
+<LI>	HTML sayfalarına hareketli HTML nesneleri (metin, resim, vb.) koyabilmemizi sağlar. 
+<LI>	Olaylara tepki verir. (Olaydan kastettiğim şey: tıklamak, tuşa basmak, sayfa açmak gibi şeyler.) 
+<LI>	HTML elemanlarını okuyabilir veya yazabilir. 
+<LI>	Kullanıcı ile bilgi alışverişinde bulunmamızı sağlar. Zira HTML formları JavaScript (VB Script) olmadan pek bir işe yaramaz.
+ <br>(Ayrıca ASP derslerinde de kullanacağız.)</br>
+</UL> 
+<p>HTML'de script ve arasına JavaScript kodu eklenir /script .</p>
+<br><div align="center"><IMG SRC="assets\kod1.png" WIDTH="400" HEIGHT="400"></div> </br>
+<p> Javascript kodunuzun yer aldığı sayfa da tipik bir HTML kod kümesi:</p>
+ <ol>
+      <li> Browser programına kendisinin bir HTML dosyası olduğunu birinci satırda beyan ediyor; ve bittiği yer açıkça gösteriliyor.</li>
+      <li>HTML kodu iki bölüm içeriyor: Başlık (Head) ve gövde (Body) bölümleri. Her bölümün nerede başladığı ve nerede bittiği açıkça belirtiliyor.</li>
+      <li>Gövde bölümünde bir Form unsuruna yer veriliyor; fakat bu formun tek ögesi var: Düğme (Button).</li>
+	  <li>Daha önce Web sayfalarınıza düğme koyduysanız, bu düğmenin onlardan farklı bir tarafı var: Türü, değeri, vs. belirtilmiyor;
+	  <br>sadece “onclick="alert('Merhaba Dünya!')" şeklinde bir ifadeye yer veriliyor.</br></li>
+	  <li>Ve ilk Javascript programınızda ne Javascript’in adı geçiyor; ne de HTML ile Javascript bölümlerini birbirinden ayırteden, SCRIPT../SCRIPT 
+	  <br>etiketine yer veriliyor!</br></li>
+   </ol>
+<p><ins>Java ve JavaScript Arasındaki Farklar Nelerdir? <font size="4" color="black" font-family="times"></ins></p>
+
+<dl>
+<blockquote><dt>Her ne kadar adları birbirinin nerdeyse aynısı olsa da Java ile JavaScript aynı şeyler değildir. Java bir programlama dilidir, JavaScript ise bir scripttir(Adından anlaşıldığı gibi). Farkları ise; Java ile gerçek programlar yazarsınız ancak program yazmakla uğraşmadan güzel şeyler yaratmak istenildiğinden ve ağır çalıştığından dolayı Java çok yaygınlaşmamıştır. JavaScript, ayrı bir programlama dilinden çok HTML'nin bir uzantısıdır denebilir. Tabii ki bu 'resmi' bir tanımlama değil, ama Java ve JavaScript arasındaki farkı anlatmak için iyi bir tanımlamadır</blockquote></dd></dt></dl>
+</div>
+    <div class="tabPanel"><H1>JavaScript Yazılım (Sözdizimi) yapısı</H1><dd><font size="4" color="black" font-family="times"><dl>
+<blockquote><dt>Javascript Yazım Kuralları
+<dd>Browser’ların Javascript yorumlama bölümleri, kodların arasında yer alan yorum ifadeleri ile boşlukları atar;
+geri kalan kelimeleri dört'e ayırarak ele alırlar:</blockquote></dd></dt></dl></font> <dt><font size="4" color="black"><br><ins>1. Belirleyiciler (Identifier):</ins></font> </dt>
+<dl>
+<blockquote>
+<dd>Javascript dilinin değişkenleri, metodları ve nesnelerini belirleyen isimlere Belirleyiciler denir. Bu sınıfa giren bütün kelimeler ya harfle ya da alt çizgi (_) ile başlar. Rakam veya diğer işaretler birinci karakter olarak kullanılamaz, fakat daha sonra kullanılabilir. Javascript, aynı kelimenin büyük harfle yazılanı ile küçük harfle yazılanını farklı isimler olarak görür. Bu sınıfta giren kelimelerin içinde boşluk olamaz.
+Javascript kodlarınız sizin bilgisayarınızda değil, ziyaretçinin bilgisayarında çalıştırılacağına göre, kullandığınız karakterlerin ziyaretçinin bilgisayarında nasıl bir değer taşıyacağını düşünmeniz gerekir. Bu bakımdan güvenli yol, Bu sınıfa giren kelimelerde, İngilizce alfabede bulunmayan, Türkçe ve diğer dillerdeki high-ASCII karakterleri (ı, İ, ğ, Ğ, Ş, Ş ile ü, Ü, ö, Ö, ç ve Ç) kullanmamaktır.
+.</blockquote></dd></dl>
+<br><div align="center"><IMG SRC="assets\kod2.jpg" WIDTH="700" HEIGHT="200"></div> </br>
+<dt><font size="4" color="black"><br><ins>2. Anahtar Kelimeler (Keyword):</ins></font> </dt>
+<dl>
+<blockquote>
+<dd>Javascript dilinin önceden tanımlanmış ve programın yorumunda özel anlam kazandırılmış kelimelerine Anahtar Kelime denilir. Aşağıda bu kelimelerin yanında kelime anlamlarını göreceksiniz; fakat ilerledikçe bu kelimelerin Javascript’te kullanıldıkları yere göre anlamlarını ve nerelerde kullanıldıklarını göreceğiz.
+.</blockquote></dd></dl>
+<br><div align="center"><IMG SRC="assets\kod3.jpg" WIDTH="500" HEIGHT="500"></div> </br>
+<dt><font size="4" color="black"><br><ins>3. Ayrılmış Kelimeler (Reserved):</ins></font> </dt>
+<dl>
+<blockquote>
+<dd>İkinci gruba girsin-girmesin bazı kelimeler, ilerde Javascript programlama ve yorumlama işlerinde kullanılabileceği düşüncesi ile, bir kenara ayrılmıştır; Javascript kodlarında kullanılamazlar. Bu listede yer alan ve halen Anahtar Kelime listesine girmiş bir kelime değişken, fonksiyon, nesne veya metod adı olarak kullanılırsa, program hata verir; henüz anahtar kelime listesine alınmamış olmakla birlikte “rezerv edilmiş” bu kelimelerin geçtiği komut satırı ise görmezden gelinir. Javascript programlarınızda kullanmayacağınız kelimelerin listesi şöyledir:
+.</blockquote></dd></dl>
+<br><div align="center"><IMG SRC="assets\kod4.jpg" WIDTH="500" HEIGHT="500"></div> </br>
+<dt><font size="4" color="black"><br><ins>4. Değerler (Literal):</ins></font> </dt>
+<dl>
+<blockquote>
+<dd>Javascript kodu icra edildiği sırada değişmeyen rakam veya metinlere Değer denir. Javascript kodlarında beş tür değer bulunur:
+.</blockquote></dd></dl>
+ <ol>
+      <li>Tamsayı Değerler (Integer Literal):</li>
+	  <dl>
+<blockquote>
+
+<dd>Tamsayılar, 10 tabanlı (ondalık, decimal), 8 tabanlı (octal) veya 16 tabanlı (hexadecimal) olabilir. 8 tabanlı sayıları belli etmek için sayıdan önce sıfır, 16 tabanlı sayıları belli etmek için sıfır ve x harfi kullanılır. Hexadecimal sayılarda 9’dan büyük sayılar A, B, C, D, E ve F harfleri ile yazılır. (Sayının basamaklarını okuma kolaylığı sağlamak için, nokta değil, virgül ile ayırmalısınız.) Örnek: Decimal 46,789; Octal 072,7898; Hexadecimal: 0x7B8.
+.</blockquote></dd></dl>
+      <li>Kesirli Değerler (Floating-point literal):</li>
+	  <dl>
+<blockquote>
+
+<dd>Tam sayı bölümünü bir ondalık nokta (virgül değil) ile kesir bölümü izleyen sayılar. Örnek: 3987.786, -1.1.
+.</blockquote></dd></dl>
+      <li>Boolean Mantık İfadeleri (Boolean Literal):</li>
+	  <dl>
+<blockquote>
+
+<dd>Javascript dilinde, Boolean Mantığı, iki sonuç verir: True (Doğru) ve False (Yanlış). Javascript, True (Doğru) değerini 1, False (Yanlış) değerini 0 rakamıyla tutar. Bir denklemin sonucunun doğru veya yanlış olduğunu irdelerken, Javascript metninde bu iki kelime küçük harfle yazılmalıdır. Dolayısıyla büyük harfle yazılmış TRUE ve FALSE kelimeleri, değişken, fonksiyon, nesne ve metod adı olarak kullanılabilir. Tabii, bir süre sonra kafanız karışmazsa!
+.</blockquote></dd></dl>
+	  <li>Alfanümerik (Karakter) Değerler (String literal):</li>
+	  <dl>
+<blockquote>
+
+<dd>İki adet çift-tırnak (“) veya tek-tırnak (‘) içine alınan her türlü ifade, Javascript için String değeridir. (Çeşitli Türkçe bilgisayar kaynaklarında “String literal” terimi “karakter değişken” olarak belirtilmektedir. “Karakter” bu değerlerin örneğin sayı değerlerden farkını anlatmıyor. Bazı kaynaklarda ise hem rakam, hem de harf içerdikleri, buna karşılık sayı olmadıkları gerçeğini belirtmek amacıyla, daha aşina olduğumuz alfanümerik terimini görmek mümkün. Ben bu ikincisini benimsiyorum.) Bir Javascript metninde alfanümerik değerleri bir tek tırnakla, bir çift tırnakla gösteremezsiniz. Başta nasıl başladıysanız, programın sonuna kadar bütün alfanümerik değerleri aynı tür tırnak içinde göstermelisiniz. Alfanümerik değer olarak verdiğiniz karakterler, daha sonra bir HTML sayfada bir nesnenin bir unsurunun değeri (örneğin bir TEXTAREA’nın içeriği) olarak kullanılacaksa ve HTML sayfa, meta etiketlerinde kendisinin Türkçe olarak yorumlanmasını sağlayacak ifadeye sahipse, Türkçe karakter ve diğer yüksek ASCII kodlardaki karakterleri içerebilir. Örnekler: “Bugün hava çok güzel” ‘Bugün hava güzel değil’ “123 adet yumurta” ’23,234,678.987’
+.</blockquote></dd></dl>
+	  <li>Özel Karakterler</li>
+	  <dl>
+<blockquote>
+
+<dd>Özellikle alfanümerik değerleri verirken, Browser’a metin görüntüleme konusunda biçim veya hareket komutları da vermek isteyebilirsiniz. Bunu, bazı kod harflerin önüne ters-bölü işareti koyarak yapabilirsiniz. Bu tür özel karakterler şunlardır:
+\b - Klavyede Geri (backspace) tuşunun görevini yaptırır.
+\f - Yazıcıya sayfayı bitirmeden çıkarttırır (formfeed).
+\n - Yazı imlecini yeni bir satırın başına getirir (new line)
+\r - Klavyede Enter-Return tuşunun görevini yaptırır.
+\t - Sekme (tab) işaretini koydurur.
+\\ - Yazıya ters-bölü işareti koydurur.
+\’ - Yazıya tek-tırnak işareti koydurur.
+\” - Yazıya çift-tırnak işareti koydurur.
+Javascript’e bu tür özel karakterlerle HTML sayfasına bir metin yazdıracağınız zaman, bu yazının PRE../PRE etiketleri arasında olması gerekir. Aksi taktirde Javascript ne yazdırırsa yazdırsın, HTML bu özel karakterleri dikkate almayacaktır.
+
+
+
+</div>
+    
+    <div class="tabPanel"><H1>Değişkenler</H1><dd><font size="4" color="black" font-family="times"><dl>
+<blockquote><dt>Değişken,
+<dd> adı üstünde, Javascript yorumlayıcısı tarafından bilgisayarın belleğinde tutulan ve içerdiği değer programın akışına göre değişen bir unsurdur. Değişkenlerin bir adı olur, bir de değeri. Program boyunca beğişkenin adı değişmez; fakat içeriği değişebilir.
+Değişkenlere isim verirken Belirleyici isimleri kurallarına riayet etmeniz gerekir. Yani bir değişkenin adı rakamla veya alt çizgi (_) dışında bir işaretle başlayamaz. Javascript, büyük harf-küçük harf ayırt ettiği (case-sensitive olduğu) için, örneğin SONUC ve sonuc kelimeleri iki ayrı değişken gösterir. Bir değişkeni tanımlarken, büyük harf kullandıysanız, program boyunca bu değişkeni büyük harle yazmanız gerekir.
+Değişken tanımlamak, bilgisayar programcılarına daima gereksiz bir yük gibi görünür. Birazdan göreceğiz, Javascript sadece değişkenleri tanımlamayı zorunlu kılmakla kalmaz, fakat nerede tanımlandığına da özel bir önem verir. Javascript’e bir Belirleyici’nin değişken olarak kullanılacağını bildirmek için “var” anahtar-kelimesini kullanırsınız:
+</blockquote></dd></dt></dl></font> <dt>
+<blockquote>
+<br>var sonuc</br>
+<br>var adi, soyadi, adres, siraNo</br>
+<br>var i, j, k</br>
+<br>var mouseNerede, kutuBos, kutuDolu</br>
+</blockquote>
+<font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd> Gördüğünüz gibi, bir “var” satırında birden fazla değişken tanımlayabilirsiniz.
+Bazı diğer programlardan farklı olarak Javascript, size değişkenleri hem beyan, hem de içeriğini belirleme işini aynı anda yapma imkanı veriyor (initialization).Javascript, programcıya bir değişkeni tanımlamadan “initalize etme” (içine doldurma) imkanı da verir; bu durumda o değişken genel (global) nitelik kazanır. Buna birazdan değineceğiz; ama iyi programlama tekniği ve özellikle daha sonra hata arama zorunluğu sebebiyle, değişkenlerin açık-seçik tanımlanması en doğru yoldur.
+Bir değişkeni tanımlayarak içini doldurmadan (initialization’dan) önce içindeki değeri sorgulamaya kalkarsanız, Browser’ın Javascript yorumlayıcısı o noktada durur ve tanımlanmamamış (undefined) değişken hatası verir.
+</blockquote></dd></dl></font><dt><font size="4" color="black"><br><ins>Javascript programlarında beş tür değişken bulunabilir:</ins></font> </dt>
+
+
+<dt><font size="4" color="black"><br><ins>1. Sayı (number): -14, 78, 87678</ins></font> </dt>
+<dl>
+<font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>Sayı türündeki değişkenler, tam sayı, ondalık sayı, pozitif sayı veya negatif sayı olabilir. Sayı değişkenlerle aritmetik işlemler yapılabilir.
+<br>var eni = 9, boyu = 4</br>
+<br>var alani = eni * boyu</br>
+<br>document.writeln(alani)</br>
+Bu kod örneği ile Javascript, Browser penceresi içindeki belgeye “alani” adlı değişkenin değerini (36) yazdıracaktır.
+
+.</blockquote></dd></dl>
+<dt><font size="4" color="black"><br><ins>2. Boolean değişken: true, false</ins></font> </dt>
+<dl>
+<font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>SJavascript, tanımlanırken değeri “true” (doğru) veya “false” (yanlış) olarak belirtilen değişkenleri otomatik olarak Boolean değişken olarak sınıflandırır ve sorguladığınızda “true” için 1, “false” için 0 değerini verir.
+
+.</blockquote></dd></dl>
+<dt><font size="4" color="black"><br><ins>3. Alfanümerik (String) Değişken: “Merhaba Dünya!”</ins></font> </dt>
+<dl>
+<font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>Alfanümerik değişken, kendisine tek veya çift tırnak içinde verilen bütün karakterleri tutar, ve sorulduğunda aynen bildirir. Alfanümerik değişkenin içi boş olabilir (var adi = “”, soyadi = “”). Alfanümerik değişkenler, tabir yerinde ise “toplandığında” değişkenlerin değerleri sırayla birbirine eklenir:
+<br>var adi = “Osman”, soyadi = “Hömek”</br>
+<br>var adisoyadi = adi + soyadi</br>
+<br>document.writeln(adisoyadi)</br>
+Bu kod örneği ile Javascript, Browser penceresi içindeki belgeye “adisoyadi” adlı değişkenin değerini (OsmanHomek) yazdıracaktır. Araya boşluk koymanın tekniğine ilerde değineceğiz!
+
+.</blockquote></dd></dl>
+
+<dt><font size="4" color="black"><br><ins>4. İşlev (Function) Değişken:</ins></font> </dt>
+<dl>
+<font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>Javascript’in hayatî noktası fonksiyonlardır. Javascript’e fonksiyonlarla iş yaptırırız. Kimi fonksiyonu, Javascript’i tasarlayanlar bizim için tanımlamışlardır; bunlara metod denir. (Kimi metod, ne yapacaksa bizim hiç bir katkımızı beklemeden yapar; kimi metod mutlaka bizden bir katkı bekler.) Kimi fonksiyonları biz tanımlarız ve komutlarını biz veririz. Bunlara “Programlanan Fonksiyonlar” denir. Başlarda yazdığınız ve merhaba2.htm adıyla kaydettiğiniz dosyada biz “merhaba()” adlı bir fonksiyon oluşturduk; sonra bu fonksiyona bir otomatik fonksiyon olan alert() metodunu kullanmasını bildirdik; bu otomatik fonksiyona da görevini yaparken kullanmasını istediğimiz değeri verdik!
+.</blockquote></dd></dl>
+
+<dt><font size="4" color="black"><br><ins>5. Nesne (Object) değişkenleri: window, document</ins></font> </dt>
+<dl>
+<font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>Bu tür değişkenlere değişken adını vermek bile gerekmez; çünkü bunlar Browser’ın nesneleridir. Fakat Javascript kodlarımızda bu nesneleri de değişken gibi kullanabiliriz. Bu sınıfa giren özel bir değişken ise değerini “null” (içi boş) kelimesiyle belirlediğiniz değişkenlerdir.
+Javascript, değişkenlerini bu beş sınıfa ayırmakla birlikte sizden değişkenlerinizini sınıflamanızı beklemez. Sınıflamanın önemi, daha sonra, programın ileri bir aşamasında bir değişkenin değeri ile yaptıracağınız işlemde ortaya çıkacaktır. Bir değişken, kendi sınıfının yapamayacağı bir işleme veya sorgulamaya tabi tutulursa, Javascript size pek de kibarca olmayan bir hata mesajı ile değişkeni doğru kullanmadığınızı hatırlatacaktır.
+Bununla birlikte bir fonksiyonda sayı olarak tanımlanmış ve doldurulmuş bir değişken, aynı fonksiyonda daha sonraki bir işlemde veya başka bir fonksiyonda alfanümerik değişken olarak tanımlanabilir ve doldurulabilir. Bu değişken sorgulandığında değerini, yetki alanı (scope) çerçevesinde bildirir.
+Değişkenlerin yetki alanı veya geçerli olduğu alan (scope), oluşturulmuş ve değeri belirlenmiş olduğu sahayı, yani kendisine atıfta bulunulduğu zaman bildireceği değerini ve bu değişkene nerelerden atıfta bulunulabileceğini gösterir. Şimdi, HTML dosyasının baş tarafında (HEAD etiketi içinde) bir değişkeni tanımladığınızı ve ona bir değer verdiğinizi düşünün. Daha sonra yazacağınız bütün fonksiyonlarda veya değerini belirleyebileceğiniz otomatik fonksiyonlarda (metod’larda) bu değişkeni bir daha tanımlamaya ve değerini belirlemeye gerek kalmadan kullanabilirsiniz; çünkü Javascript açısından bu değişken genel (global) değişken sayılır. Daha sonra ayrıntılı olarak göreceğimiz gibi, HTML’in gövde kısmında (BODY etiketi içinde) bir fonksiyon yazdığımızı ve bu fonksiyonun içinde bir değişken tanımladığımızı düşünün. Daha sonra yazacağınız bir fonksiyonda bu değişkeni kullanamazsınız; çünkü Javascript bir fonksiyonun içindeki değişkeni yerel (local) değişken sayar ve kendi yetki alanı (scope’u) dışında kullanmanıza izin vermez. Bir yerel değişken, ait olduğu fonksiyon çağrıldığı anda oluşturulur ve fonksiyonun icrası bittiği anda yok edilir. Dolayısıyla bir fonksiyon, başka bir fonksiyonun yerel değişkinini kullanmaya kalktığında “undefined” (tanımlanmamış) değişken hatasıyla karşılaşırsınız.
+Bir değişkeni bütün HTML sayfası boyunca kullanmayı düşünüyorsanız, bu değişkeni, HTML sayfasının başında içinde fonksiyon bulunmayan bir SCRIPT bölümünde tanımlamalı ve doldurmalısınız. 
+
+.</blockquote></dd></dl>
+<br><div align="center"><IMG SRC="assets\kod5.jpg" WIDTH="500" HEIGHT="500"></div> </br>
+<br><div align="center"><IMG SRC="assets\kod6.jpg" WIDTH="500" HEIGHT="500"></div> </br>
+ <dt><font size="5" color="black"><br><ins>Dizi-Değişkenler (Array)</ins></font> </dt>
+<dl>
+<font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>Javascript’in şu ana kadar ele aldığımız bütün değişkenleri, tekildir. Yani bu değişkenlerden Javascript bakımından sadece bir adet vardır; dolayısıyla bir adet de değeri bulunur.
+Oysa şimdi şöyle bir durum düşünün: Evcil kuşları tanıttığınız bir site yapıyorsunuz. Ele alacağınız bütün kuşları ve özelliklerini bir tablo olarak düşünebilir misiniz? Kuş-1: Kanarya, Kuş-2: Bülbül, Kuş-3: Muhabbet Kuş-4: Papağan, gibi. Bunların hepsini tek tek tanımlamaya kalkarsak, daha sonra kullanım zorluğu doğabilirdi. Javascript, bize “dizi-değişken” (Array) yoluyla, örneğin bir “kuş” değişkeni oluşturup, bunun içine istediğimiz kadar değer koyma imkanı veriyor. Bir dizi-değişkenin bireylerinin değerlerini dizi-değişkenin endeksi ile çağırabilir veya belirleyebilirsiniz.
+Bir dizi-değişken oluşturmanın formülü şudur:
+var dizinin_Adı = new Array(unsur1, unsur2, unsur3...unsurN)
+Bu formüle göre, kuş dizisini şöyle oluşturabiliriz:
+var kusDizi = new Array(bülbül, kanarya, muhabbet, papagan)
+Diziler (nedendir, bilinmez) sıfırdan itibaren numaralanır; yani bizim örneğimizde dizinin birinci üyesi kusDizi[0], ikinci üyesi kusDizi[1], üçüncü üyesi kusDizi[2], dördüncü üyesi ise kusDizi[3] diye anılır. Burada örneğin kusDizi[2] değişkeni ”muhabbet” değerini taşır. İlerde bu değeri değiştirmek ve diyelim ki “Saka” yapmak istersek, Javascript kodumuzun uygun yerinde şunu yazarız:
+kusDizi[2]=”saka”
+Dizi-değişkenleri, özellikle ele almamızın bir nedeni, dizilerin Javascript açısından nesne sayılmasıdır. Bunun önemine ve kullanıldığı yerlere daha sonra değineceğiz; şimdilik şunu belirtelim: dizi-değişkenlerin, nesne oldukları için özellikleri (property) vardır. Örneğin, oluşturduğum dizi-değişkenin kaç üyesi olduğu, “kusDizi.length” özelliğinin içinde yazılıdır. İlerde dizi-değişkenlerimizin üye sayısından çok yararlanacağız.
+
+
+.</blockquote></dd></dl>
+
+</div>
+
+
+
+<div class="tabPanel"><H1>Operatörler</H1><dd><font size="4" color="black" font-family="times"><dl>
+<blockquote><dt>Atama (Assignment) İşlemleri:
+<dd>Javascript’te en sık yapacağınız işlem, bir değişkene bir değer atama işlemidir: “Adı” adlı değişkenin değeri “Hakkı” olsun! “Soyadı” adlı değişkenin değeri “Öcal” olsun, gibi. Ve tahmin ettiğiniz gibi bunu eşittir (=) işaretiyle yaparız:
+var adi = “Ahmet”, soyadi = “Arif”
+var siraNo = 123, sigortaNo = “A123-2345-234”
+Javascript, bir eşittir işaretiyle karşılaştığında, önce işaretin sağına bakar ve değeri okur; sonra işaretin soluna bakar ve bu adın, meşru bir değişkene ait olup olmadığını ve bu adla bilgisayarın belleğinde bir yer açıp açamayacağını belirler. Eğer işaretin solundaki isim, meşru, yani önceden tanımlanmış veya değeri belirlenmiş bir değişkene ait ise, o değişkenin bilgisayarın belleğindeki adresine işaretin sağındaki değeri yazar. Değişken ismi yeni bir meşru isme aitse, Javascript bu değişkeni “initalize” eder, yani hem yer açar, hem de içine değerini yazar. Değişken ismi kabul edilebilir nitelikte değilse, yani söz gelimi altı çizgi (_) dışında bir işaretle veya rakamla başlıyorsa, içinde boşluk varsa, veya yasaklı kelimelerden biri ise, Javascript hata mesajı verir.
+Bu noktada sık yapılan bir hata, başka bir programlama dilinden kalma alışkanlıkla değişkeni sağa, değeri sola yazmaktır: hakki = adi, gibi. Javascript bu durumda da hata mesajı verir; çünkü “hakki” değişkenine “adi” değerini atamak için, sayı olmayan bu alfanümerik değerin ya tek, ya da çift tırnak içine yazılması gerekir.
+Javascript’te bir değişkene değer atarken, bu değeri mevcut bir veya daha fazla değişkenden de alabilirsiniz:
+<br>var i = j + k</br>
+<br>var indexNo = siraNo + kategoriNo</br>
+<br>var tutariTL = birimFiyatTL * adet</br>
+
+</blockquote></dd></dl></dt></font>
+<dd><font size="4" color="black" font-family="times"><dl>
+<blockquote><dt>Aritmetik İşlemleri:
+<dd>İşte lisede matematik dersinde kaytarmamış olduğunuza şükredeceğiniz noktaya geldik: Javascript (veya başka herhangi bir programlama dili) siz formülünü vermedikçe hiç bir hesabı yapamaz; ama dünyanın en çapraşık, en karmaşık formülünü de verseniz, sonucu (bilgisayarınızın hızı ile orantılı olarak) hesaplar.
+Tabiî, Javascript, dört temel işlemi yapabilir. toplama işlemini artı işaretiyle (+), çıkartma işlemini eksi işaretiyle (-), çarpma işlemini yıldız (asterisk, *) işaretiyle, ve bölme işlemini düz bölü işaretiyle (/) yaptırırsınız.
+Javascript, artı işaretini gördüğü zaman, işaretin hem sağına, hem de soluna aynı anda bakar ve bulduğu iki değeri, sayı ise toplar, alfanümerik ise sağdakinin soldakinin arkasına ekler:
+<br>x = 3 + 4</br>
+Javascript, bu işlemin sonucu olarak x adlı değişkene 7 değerini atar. Fakat kimi zaman, bir değişkenin mevcut değerini (sıfır bile olsa) belirli bir miktarda arttırmak isteyebilirsiniz. Yani Javascript’e “x’in mevcut değerine 3 ekle!” demek isteyebilirsiniz. Bunu, “x = x + 3” diye ifade ederiz. Eğer arttırılacak miktar 1 ise, bunu daha kısa yazmak da mümkündür: ++x.
+Javascript çıkartma işleminde de aynı kuralları uygular:
+<br>x = 3 - 4</br>
+<br>x = x - 3</br>
+<br>--x</br>
+Değişkenleri 1 arttırma veya 1 eksiltmeye yarayan kısaltmanın üzerinde biraz duralım. İlerde bol bol örneklerini göreceğimiz gibi, Javascript programlarınızda bazı değişkenleri sayaç olarak kullanmak isteyebilirsiniz. Bir işin sonuna geldiğimizi bilebilmek için, diyelim ki 12 kişilik bir adres listesini Javascript’e okutup, sayfaya bir tablo çizdiriyorsak, Javascript’e listenin sona geldiğini belirtebilmek için sayaç rakamı 12 veya 0 oldu ise durmasını emretmek zorundasınız. Bu durumda sayaç olarak kullandığınız değişkenin değerini, her adres okunduğunda 1 arttırmak veya 1 eksiltmek, en kestirme yoldur. Diyelim ki, x’in orijinal değeri 12. Javascript x-- veya --x işlemini gördüğü anda, 12’den 1 çıkartacak ve x’in yeni değeri olarak 11’i atayacaktır. Aynı şekilde ilk değer sıfır ise, x++ veya ++x işlemini gördüğü anda x’in yeni değerini 1 yapacaktır.
+Toplama ve çıkartma işlemlerinde yapabileceğiniz başka bir kısaltma ise şöyle yazılır:
+<br>x = x + y işlemini kısaltmak için x += y</br>
+<br>x = x - y işlemini kısaltmak için x -= y</br>
+Bu bölümü bitirmeden önce, bir sayının değerini negatif yapmaktan da söz edelim. Bir değişkene negatif değer atamak için, sayının önüne eksi işareti koymanız yeter: x = -5 gibi. Bir değişkene başka bir değişkenin değerini negatif olarak atamak istiyorsanız, x = -y gibi yazabilirsiniz. y değişkeninin değeri zaten negatif ise, x’e atanan değer pozitif olur.
+Belki belirtmek bile gerekmez ama, Javascript, bölü işaretinin solundaki sayıyı, sağındaki sayıya böler; yıldız (asterisk) işaretinin sağındaki ve solundaki sayıları birbiri ile çarpar.
+Javascript, alfanümerik değerlerle çıkartma, çarpma ve bölme işlemleri yapmaz; sonucun yerine “NaN” (Not a Number, Sayı Değil) yazar.
+</blockquote></dd></dl></dt></font>
+
+<dd><font size="4" color="black" font-family="times"><dl>
+<blockquote><dt>Karşılaştırma İşlemleri:
+<dd>JJavascript dahil, bütün bilgisayar programlarının ortak özelliği, programın bir noktada karar vermesidir: “Filanca değişken şu değerde ise, falanca değişken ile şunu yap; o değerde değil de, bu değerde ise bunu yap!” gibi. Bu tür komutlarda Javascript, sözünü ettiğiniz değişkenin değerini bulup, onu verdiğiniz bir başka ölçütle karşılaştıracak ve varacağı sonuca göre emrettiğiniz işi yapacaktır. Dolayısıyla Javascript’te bir takım karşılaştırma işlemlerine ihtiyacınız var demektir.
+Javascript’in karşılaştırma operatörleri genellikle “if” (eğer..ise) ifadesiyle birlikte kullanılır; ve bu soruyu soran satıra “true” (doğru) veya “false” (yanlış) sonucunu verir. Önce, bu işlemleri yaptırtan operatörleri ve işlevlerini sıralayalım:
+==	Eşit operatörü. İşaretin sağında ve solundaki değerlerin eşit olması halinde true (doğru) sonucunu gönderir.
+!=	Eşit değil operatörü. İşaretin sağında ve solundaki değerlerin eşit olmaması halinde true (doğru) sonucunu gönderir.
+>	Büyüktür operatörü. Soldaki değer, dağdaki değerden büyük ise true (doğru) sonucunu gönderir.
+<	Küçüktür operatörü. Soldaki değer, dağdaki değerden küçük ise true (doğru) sonucunu gönderir.
+>=	Büyük veya eşit operatörü. Soldaki değer, dağdaki değerden büyük veya bu değere eşit ise true (doğru) sonucunu gönderir.
+<=	Küçük veya eşit operatörü. Soldaki değer, dağdaki değerden küçük veya eşit ise true (doğru) sonucunu gönderir.
+Daha sonra örneklerini göreceğiz; ve karşılaştırma işleminden sonra ne olduğunu, Javascript’in nasıl bir yol izlediğini ele alacağız. Şimdi sadece böyle bir karşılaştırma işleminde nasıl sonuç verdiğini görmekle yönetinelim. 
+</blockquote></dd></dl></dt></font>
+<dd><font size="4" color="black" font-family="times"><dl>
+
+<blockquote><dt>Alfanümerik İşlemleri:
+<dd>Javascript’in alfanümerik değişkenlerin değerleri ile sadece toplama işlemi yaptığını söylemiştik. Bu durumda buna toplama değil birleştirme, ekleme işlemi denir.
+
+</blockquote></dd></dl></dt></font> <dt>
+
+
+<dd><font size="4" color="black" font-family="times"><dl>
+<blockquote><dt>Mantıksal İşlemler:
+<dd>Javascript, karşılaştırma işlemini Boolean (.. ve .. doğru ise ... yap!) mantıksal işlemlerini kullanarak da yapabilir. Burada, Boolean mantığından kısaca söz edelim.
+Şimdi, bir baba, kızı Ayşe ile oğlu Ali’ye diyor ki, “İkiniz de sınıfını geçerseniz, bu yıl sizi Antalya’ya deniz kenarında bir ay geçirmek üzere teyzenizin evine göndereceğiz!” Ali sınıfını geçer, Ayşe geçemezse iki çocuk da teyzelerine gidemeyecekler; Ali sınıfını geçer, Ayşe de geçerse, iki çocuk da Antalya’ya gidecek; Ali de, Ayşe de sınıflarını geçemezse, iki çocuk da yaz tatilini oturdukları yerde geçirecekler.
+Javascript’in Boolean mantığını sorgulama işaretleri şunlardır:
+<br>&&	Mantıksal Ve: iki koşul da doğru.</br>
+<br>||	Mantıksal Veya: ya birinci, ya da ikinci koşul doğru.</br>
+<br>!	Mantıksal Değil: Tek koşula uygulanır; koşul doğru ise sonuç false (yanlış), koşul yanlış ise sonuç true (doğru) olur.</br>
+<br>Bu mantığı, şimdi Boolean ifadesi haline getirelim:</br>
+<br>Ali=geçti && Ayşe=geçti : çocukların ikisi de tatile gidiyor.</br>
+<br>Ali=geçti || Ayşe=geçti : çocukların ikisi de tatile gidemiyor.</br>
+<br>!(Ali=geçti) : çocukların ikisi de tatile gidemiyor.</br>
+<br>!(Ayşe=geçti) : çocukların ikisi de tatile gidemiyor.</br>
+
+
+</blockquote></dd></dl></dt></font> <dt>
+
+
+</div>
+
+
+
+<div class="tabPanel"><H1>Aritmetik</H1><dd><font size="4" color="black" font-family="times"><dl>
+<blockquote><dt>Aritmetik işleçler sayılar üzerinde (değişmez değerler veya değişkenler) aritmetik gerçekleştirir.
+<dd>VB Script ile Java Script'in işlem işaretleri biraz farklı. Bu farklar Visual Basic ile Java (veya C) arasında da aynı şekildedir. Daha önce programcılık yapmamış arkadaşlar için kısaca işlem önceliğini de anlatmak zorundayım. Özetle bu sayfada aritmetik işlemler ve öncelik sıraları yeralacak</blockquote></dd></dt></dl></font> 
+<br><div align="center"><IMG SRC="assets\kod12.jpg" WIDTH="500" HEIGHT="500"></div> </br>
+<dt><font size="4" color="black"><br><ins>Aritmetik İşlem İşaretleri ve Öncelik Sıralaması</ins></font> </dt>
+
+<dd><font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>JJavaScript'te yer alan aritmetik işaretlerin bir kısmını zaten biliyorsunuz. Ama ben kısaca sıralayım:
++	Toplama işlemini yapar.
+ 	sayi = 10 + 5 (Not: sayi=15 olur)
+-	Çıkartma işlemini yapar.
+ 	sayi= 10 - 5 (Not: sayi=5 olur)
+*	Çarpma işlemini yapar.
+ 	sayi = 10 * 3 (Not: sayi=30 olur)
+/	Bölme işlemi yapar.
+ 	sayi= 10 / 3 (Not: sayi=3.3333333333333335 olur)
+%	Tamsayılı bölme işlemi yapar ve kalanı verir.
+ 	sayi=10 % 3 (Not: sayi=1 olur)
+Bu işlemlerde çarpma, bölme ve kalanlı bölme işlemlerinin toplama ve çıkarma işlemine göre önceliği vardır. Bir işlemde eğer hiç parantez yoksa, soldan sağa doğru sırasıyla çarpma ve bölme işlemleri yapılır. Bu prensip her bilgisayar dilinde ve hesap makinelerinde de geçerlidir.
+
+</blockquote></dd></dl></font>
+<dt><font size="4" color="black"><br><ins>Değişken Değerini Taşıdığı Değere Göre Değiştirme</ins></font> </dt>
+
+<br><div align="center"><IMG SRC="assets\kod13.jpg" WIDTH="500" HEIGHT="500"></div> </br>
+
+ </div>
+ 
+ 
+ 
+<div class="tabPanel"><H1>Veri Tipleri</H1><dd><font size="4" color="black" font-family="times">
+<p>JavaScript değişkenleri birçok veri türüne sahip olabilir : sayılar, dizeler, nesneler ve daha fazlası:</p>
+<dl>
+<blockquote><dt>Veri Türleri Kavramı
+Programlamada veri türleri önemli bir kavramdır.
+
+Değişkenler üzerinde çalışabilmek için tür hakkında bir şeyler bilmek önemlidir.
+
+Veri türleri olmadan bir bilgisayar bunu güvenli bir şekilde çözemez:
+
+<br>var x = 16 + "Volvo";</br>
+On altıya "Volvo" eklemek mantıklı mı? Bir hata mı üretecek yoksa bir sonuç üretecek mi?
+
+JavaScript yukarıdaki örneği şu şekilde ele alacaktır:
+
+<br>var x = "16" + "Volvo";</br>
+JavaScript Dizeleri
+Bir dize (veya bir metin dizesi) "John Doe" gibi bir dizi karakterdir.
+
+Dizeler tırnak işaretleri ile yazılır. Tek veya çift tırnak kullanabilirsiniz:
+
+<dd></blockquote></dd></dt></dl></font> 
+<dd><font size="4" color="black" font-family="times"><dl>
+
+<blockquote><dt>String Veri Tipi(Metin):
+<dd>String veri tipi içerisinde metinsel ifadeleri saklar. String veriler değişkenlere girilirken (“) tırnak işareti ya da (‘) kesme işareti kullanılır.
+<br>var isim=”lifeacode”;       // doğru kullanım</br>
+
+<br>var soyisim=’egitim sitesi’;    // doğru kullanım</br>
+</blockquote></dd></dl></dt></font> <dt>
+<dd><font size="4" color="black" font-family="times"><dl>
+
+<blockquote><dt>Number Veri Tipi(Sayısal):
+<dd>Numbers veri tipi içerisinde sayısal değerleri tutmak için kullanılır. Değerler tanımlanırken (“) çift tırnak veya (‘) tek tırnak işaretine ihtiyaç yoktur.
+<br>var a=1;   // doğru kullanım</br>
+<br>vvar pi=3.14;   // doğru kullanım ondalıklı sayı</br>
+Ondalıklı sayı değeri tanımlanırken (.) nokta işareti kullanılır.
+</blockquote></dd></dl></dt></font> <dt>
+<dd><font size="4" color="black" font-family="times"><dl>
+
+<blockquote><dt>Boolean Veri Tipi(Mantıksal):
+<dd>Bazı ifadeler sadece iki alternatiflidir. İfade ya doğrudur(true) ya da yanlıştır(false). Bu tip değişkenlere boolean ifadeler ismi verilir. Mantıksal veriler koşul gerektiren ifadeler için kullanılır.
+
+<br>var a = true;  // doğru kullanım</br>
+
+<br>var b = false;  // doğru kullanım</br>
+</blockquote></dd></dl></dt></font> <dt>
+<dd><font size="4" color="black" font-family="times"><dl>
+
+<blockquote><dt>Array Verisi(Dizi):
+<dd>Dizi bir veri tipinde birden fazla değer içerir. Dizi oluşturulurken köşeli parantez kullanılır ve değerler (,) ile ayrılır.
+
+<br>var sehir=[“İstanbul”,” Ankara”, ”İzmir”];  // Yazı dizisi</br>
+
+<br>var sayi=[ 11111, 222222, 333333];   // Sayı dizisi</br>
+</blockquote></dd></dl></dt></font> <dt>
+<dd><font size="4" color="black" font-family="times"><dl>
+
+<blockquote><dt>Veri İkilileri (Nesneler):
+<dd>Nesneler alt değişken verilerini içerisinde tutar. Alt değişkenler sıralanırken kıvrım parantezler kullanılır. Değişkenler virgüllerle ayrılarak yazılır.
+
+<br>var site = {  isim:”lifeacode”, içerik:”eğitim” };   // doğru kullanım</br>
+</blockquote></dd></dl></dt></font> <dt>
+<dd><font size="4" color="black" font-family="times"><dl>
+
+<blockquote><dt>Boş ve Tanımsız Veriler( Undefined & Null ):
+<dd>JavaScript dilinde değer içermeyen değişkenler bulunur. Bu değişkenler veri içermezler. Veri içermeyen değişken oluşturulurken var degişken seklinde oluşturulur. Yani sadece değişken ismi yazılır. (=) eşittir operatörü kullanılmaz.
+
+<br>var sehir;   // doğru kullanım, sehir değişkeni veri içermez.</br>
+
+<br>Bazı durumlarda değişkenin içerisinde bulunan verinin silinmesi gerekir. Bunun için Null ifadesi kullanılır.</br>
+<br>sehir = null;  // doğru kullanım, sehir değişkeninin içerisindeki veri silinir.</br>
+</blockquote></dd></dl></dt></font> <dt>
+<dd><font size="4" color="black" font-family="times"><dl>
+
+<blockquote><dt>Veri Türünü Tespit Etmek (typeof):
+<dd>Typeof operatörü kullanılarak bir değişkenin türü sorgulanabilir.
+<br>typeof “lifeacode”   //string</br>
+
+<br>typeof “123”   //number</br>
+
+<br>typeof true   //boolean</br>
+
+<br>typeof [1855,4785,5412,5698]   //object</br>
+
+<br>typeof {isim: ‘lifeacode’, içerik:”eğitim”}   //object</br>
+</blockquote></dd></dl></dt></font> <dt>
+<dd><font size="4" color="black" font-family="times"><dl>
+
+<blockquote><dt>Değişkenin Veri Türünü Değiştirmek:
+<dd>JavaScript veri türleri yeni değerler atanarak kolayca değiştirilebilir. Aşağıda a değişkeni içerisinde bulunan değer yeni bir değer almıştır.
+<br>var a = // tanımsız değer</br>
+
+<br>var a= “lifeacode” // a string bir değer aldı.</br>
+
+<br>Var a= 2018 // a sayısal bir değer aldı.</br>
+</blockquote></dd></dl></dt></font> <dt>
+
+
+
+</div>
+
+
+
+
+<div class="tabPanel"><H1>Fonksiyon Yapısı</H1><dd><font size="4" color="black" font-family="times"><dl>
+<blockquote><dt>Javascript’te Fonksiyon
+<dd>Javascript, klasik HTML’in yapamadığı şeyler yapabilir; ziyaretçiden veya ziyaretçinin Browser programından alacağı bir bilgiyi değerlendirerek bir dizi işlem yapabilir; ziyaretçiyi sitemizde belli bir sayfaya yönlendirebilir; kısaca sayfalarımıza ziyaretçi ile etkileşme imkanı kazandırır.
+Yukarıdaki çeşitli örneklerde gördüğünüz işlerin çoğu bir kere başvurulan işlerdi; fakat çoğu zaman sayfanızdaki bir Javascript işleminin defalarca yapılması gerekebilir. Hatta öyle işlemler olur ki, Javascript, başka bir işi yapmadan önce, mutlaka bu işlemi yapmak isteyebilir.
+Bu tür tekrarlanan işleri, bu işin yapılması için gerekli bilgi kümesi ve komutlarla birlikte bir grup haline getirsek ve bu gruba bir isim versek; sonra bu iş kümesine ihtiyaç olduğu yerde Javascript’e “Filanca isimli grubu al; içinde belirtilen işleri yap, sonra sonucu bu noktaya bildir!” desek; acaba işlerimiz daha kolay hale gelmez mi?
+İşte bu tür, bir isim altında toplanmış işlem paketlerine Function (işlev) adı verilir; Javascript kendisine “Şu fonksiyonu yap!” dediğiniz noktada yapmakta olduğu durdurur ve fonksiyon paketindeki işleri yapar; bu paket ortaya bir değişken veya sonuç çıkartıyorsa, o bilgiyi edinmiş olarak fonksiyon için yarım bıraktığı işleme geri döner. Fonksiyon yazmanızdaki birinci sebep, büyük bir ihtimalle, Javascript’e, Fonksiyon’un sağlayacağı bilgiyi kazandırmaktır.
+Genel hatlarıyla fonksiyon, şu formüle göre yazılır:
+function fonksiyonun_adı (argüman1, argüman2, ... argümanN){
+işlemler
+	}
+	Fonksiyonlar mutlaka SCRIPT etiketinin içinde yer alır. Daha sonra kullanılacak (çağrılacak) olsa da bütün fonksiyonlarınını HTML dosyasının HEAD bölümüne koymanız, Browser’ın Javascript yorumlayıcısı bakımından sürat sağlar. İyi bir programlama tekniği, bir sayfada gerekli bütün fonksiyonları, altalta, HTML’in HEAD bölümünde yer alacak bir SCRIPT etiketi içinde beyan etmek; sonra ihtiyaç olduğu yerde yeni bir SCRIPT etiketi koyarak bu fonksiyonu göreve çağırmaktır.
+Bir fonksiyon, kendisini göreve çağıran komuttan veya fonksiyondan veri kümesi (argument) alabilir. Buna bir değerin fonksiyona geçirilmesi, ulaştırılması, verilmesi denilir. Bir fonksiyon, bir ya da daha fazla argüman alabilir. Fonksiyonun argümanları, bir isim altında toplanır ve bu bilgi kümesinin bölümlerine bu isimle atıfta bulunulur.
+
+</blockquote></dd></dt></dl></font> 
+<dt><font size="4" color="black"><br><ins>Fonksiyona değer gönderme ve değer alma</ins></font> </dt>
+
+<dd><font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>Bir fonksiyon ile Javascript programının diğer işlemlerinin ilk ilişkisi fonksiyona bir değer gönderme ve ondan bir değer almaktır. Bir fonksiyon, yaptığı işin sonucu olarak, kendisini göreve çağıran komuta veya fonksiyona kendi adıyla bir değer verebilir.
+Bir örnek üzerinde düşünmeye başlayalım. Ziyaretçinizden telefon numarasını yazmasını istiyorsunuz. Ziyaretçi de sayfada bir INPUT kutusuna veya PROMPT diyalog kutusuna telefon numarasını yazıyor. Bu numarayı, sayfada başka bir programda veya bölümde kullanmadan önce, gerçekten doğru yazılıp yazılmadığını irdelemek istiyorsunuz. Ziyaretçinin verdiği telefon numarasını bir fonksiyona havale edebilirsiniz; bu fonksiyon telefon numarası arzu ettiğimiz biçimde yazılmışsa olumlu, yazılmamışsa olumsuz yanıt verebilir. Bütün yapacağımız şey, ziyaretçiden alacağımız bilgiyi, bu fonksiyona argüman olarak geçirmekten ibaret; fonksiyonun sonuç olarak verdiği değer doğru ise işleme devam edeceğiz, değilse ziyaretçiyi uyararak, doğru bilgiyi girmesini isteyeceğiz.
+Şimdi düz yazı programınızda şu kodu yazıp, fonksiyon1.htm adıyla kaydedin:
+</blockquote></dd></dl></font>
+<br><div align="center"><IMG SRC="assets\kod7.jpg" WIDTH="500" HEIGHT="500"></div> </br>
+<br><div align="center"><IMG SRC="assets\kod8.jpg" WIDTH="500" HEIGHT="500"></div> </br>
+<br><div align="center"><IMG SRC="assets\kod9.jpg" WIDTH="500" HEIGHT="500"></div> </br>
+
+<dd><font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>Bu sayfada, önce “if(dogruMu(numara))” şeklindeki ifadeye dikkat edelim. Javascript, bu noktada “dogruMu” fonksiyonu çağıracak, bunu yaparken de fonksiyona “numara” adı altında bir değer geçirecektir. (Bu değeri, çeşitli şekillerde elde edebiliriz; bir Form nesnesinde INPUT kutusundan alabileceğimiz gibi, burada olduğu gibi PROMPT diyalog kutusuyla da alabiliriz.) Fonksiyondan bütün beklediğimiz “if” sorgulamasına “true” (doğru) veya “false” (yanlış) şeklinde bir karşılık vermesidir. Yukarıda “if” döngüsünü ele alırken, yanıtın doğru olması halinde ilk bölümdeki, yanlış olması halinde “else” bölümündeki komutların uygulandığını görmüştük. Şimdi burada dogruMu() fonksiyondan “true” sonucu dönerse, sayfaya teşekkür mesajı ve bilgi notu iki satır halinde yazılacak; “false” sonucu dönerse, ziyaretçi numarayı doğru yazması için uyarılacaktır. (Bu örnekte program bu noktada kesiliyor, oysa gerçek hayatta bu noktada ziyaretçiye bilgi girme aracının yeniden sunulması gerekir.)
+Şimdi fonksiyona dönebiliriz. dogruMu() fonksiyonu, kendisine görev verecek işlemden veya fonksiyondan mutlaka bir argüman verilmesini istiyor. “numara” adıyla işleme sokulacak olan bu argüman, fonksiyon için bir nesnedir. Bu arada fonksiyonumuz kendi işleri için bir değişken oluşturuyor (karakter), ve içine boş değer koyuyor (null); daha sonra kendisinden beklenen değeri içine koyacağı bir değişken oluşturuyor ve içine varsayılan değer olarak “true” kelimesini koyuyor. Aksi kanıtlanmadığı taktirde, fonksiyonu göreve çağıran “if” döngüsüne bu değer bildirilecektir.
+Fakat önce fonksiyonun gerçekten kendisine verilen bilgilerin, arzu edilen biçime uygun olup olmadığını sınaması gerekir. Bu bilgiyi tutan “numara” nesnesi, nesne olduğu için bazı özelliklere sahiptir; bu özelliklerden biri de uzunluğudur. Önce bu uzunluğun 13 karakter olup olmadığına bakıyoruz. Ziyaretçi, telefon numarasını yazdığı halde parantezleri veya kesme çizgisini unuttuysa, verdiği bilgilerin uzunluğu 13 karakterden az olacaktır, yani “numara.length” 13 olmayacak, “durum” değişkenin değeri “false” olarak değiştirilecektir. Yok, numaranın karakter sayısı 13 ise, fonksiyonumuz 13 karakteri, bir “for” döngüsü çerçevesinde tek tek irdelemeye başlayacaktır.
+
+</blockquote></dd></dl></font>
+<dt><font size="4" color="black"><br><ins>charAt(i)a</ins></font> </dt>
+
+<dd><font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>Fonksiyonlarda ve diğer tür işlemlerde kullanabileceğimiz bir Javascript kısaltması, “filanca yerdeki karakter” diyebileceğimiz “charAt(i)” ifadesidir. Burada i yerine herhangi bir rakamı yazabilirsiniz. Bu kısaltma ancak sayı ya da alfanümerik değer içeren değişkene veya nesneye uygulanabilir.
+Buradaki örneğimizde, Javascript, karakter adını verdiği ve içini boş bıraktığı değişkenin değeri olarak, “numara” nesnesinin o anda, o adımda irdelediği karakterini atamaktadır. Şimdi kendimizi Javascript’in yerine koyalım, ve buradaki “for” döngüsünün birinci adımında ne yapacağımızı belirtelim:
+“Hımm.. karakter değişkeninin değeri olarak numara nesnesinin i’nci karakterini atamam isteniyor. Peki i nedir? 0. O halde karakter, nesnenin 0 numaralı ögesi olacaktır. Nedir bu: Açılan parantez. Güzel. O halde, karakter eşittir açılan parantez. Sonra, eğer i değişkeni sıfır ve karakter açılan parantez ise devam etmeliymişim! İkisi de doğru; o halde devam. O da ne? Devam etmem gereken yerde “continue” komutu var. Yani, işi burada kes, “for” döngüsünün başına git ve yeniden başla diyorlar. Peki, hadi en başa dönelim. i’yi bir adet arttıralım, 2 yapalım; 2, 12 olmadığı ve 12’den küçük olduğuna göre devam edelim..”
+İkinci adımda Javascript, karakter değişkeninin değeri olarak numara nesnesinin ikinci karakterini atayacak ve, i artık sıfır olmadığı için ilk continue’den geri dönmeyecek ve birinci Else’i izleyen işi yapacaktır. Bu işin ilk şartı i’nin dört olmasıdır. i bu anda 2 olduğuna göre, Javascript bu kez hiç bir “continue”dan geri dönmeyecek ve en sondaki parseInt() işlemlerine ulaşacaktır. Ne zaman 1’nin değeri dört olursa, ikinci if’in ikinci şartı olan dördüncü karakterin kapanan parantez olup olmadığı irdelenecektir. Ziyaretçinin verdiği telefon numarasında dördüncü karakter kapanan parantez değil ise, fonksiyon kesilecek ve durum değişkeninin değeri “false” olacak ve bu değer, fonksiyonu göreve çağıran if döngüsüne bildirilecektir. Fonksiyon aynı sorguyu, dokuzuncu karakterin kesme çizgisi olup olmadığını belirlemek için de yapacaktır.
+
+</blockquote></dd></dl></font>
+<dt><font size="4" color="black"><br><ins>parseInt(i,n)</ins></font> </dt>
+
+<dd><font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>Fonksiyona dikkat ederseniz, 0, 4 ve 9’ncu karakterlerdeki açılan ve kapanan parantez ve kesme çizgisi irdelemelerinde başa dönmeyen döngülerde, Javascript en sonda if ile başlayan parseInt() şeklinde bir ifadeyi icra ediyor.
+Javascript, kendisine alfanümerik olarak verilen bir değişken değerini tamsayı (integer) veya kesirli sayıya (float) çevirebilir. Alfanümerik değerleri tam veya kesirli sayıya çevirmek için, parseInt ve parseFloat ifadelerini kullanırız. (Javascript’in sayı olarak verilen değişkeni alfanümerik değere (string) çevirmesi için kullanılmaya hazır bir metod yoktur; bunun için toplama işlemi içeren bir fonksiyon yazmanız gerekir.) Her iki metotta da, çevirme işleminin 10 tabanlı (decimal), 8 tabanlı (octal) veya 16 tabanlı (hexadecimal) olymasını istediğinizi, çevrilmesini istediğiniz alfanümerik değerden (veya bu değeri temsil eden değişkenin adından) sonra bir virgül koyarak, 10, 8 veya 16 rakamı ile belirtmeniz gerekir.
+parseInt() metodu ile bazı çevirme işlemlerine örnek verirsek, parseInt(“123456.3333”), 123456 sonucunu verir. Çünkü bu metod kendisine verdiğiniz alfanümerik değerin içinde rakam ile artı ve eksi işaretlerinden başka bir şey gördüğü noktada durur; o noktaya kadar gördüğü unsurları bir tamsayı değişkeni olarak size geri verir.
+parseFloat() metoduna da bir örnek verirsek, parseFloat(“123456.3333”), 123456.3333 sonucunu verir. Çünkü bu metod kendisine verdiğiniz alfanümerik değerin içinde rakam ile artı ve eksi işaretlerinin yanı sıra nokta işaretinden başka bir şey gördüğü noktada durur; o noktaya kadar gördüğü unsurları bir kesirli sayı değişkeni olarak size geri verir.
+Her iki metod da, çevirme işlemini başarıyla yaparlarsa, kendilerini görevlendiren işleme (bizim örnekte bunu bir if döngüsü yapıyor) 1, başarıyla yapamazlarsa 0 değeri döndürürler. Yani, if döngüsü, parsInt() metodu başarılı olursa 1, başarılı olamazsa 0 sonucunu alacaktır. Biliyoruz ki, if açısından 1, true-doğru, 0 ise false-yanlış demektir.
+Buradaki örnek kodda, 1, 2, 3, 5, 6, 7, 8, 10, 11, 12 ve 13’ncü karakterler, parseInt() metodu ile sayıya çevriliyor ve elde edilen sayının 0 ile 9 arasında olup olmadığına bakılıyor; sonuç doğru ise döngü bir sonraki karakteri almak üzere başa dönüyor; sonuç yanlış ise döngü o naktada break ile kesiliyor, durum değişkenin değeri “false” yapılıyor ve fonksiyon bu sonucu kendisini görevlendiren işleme teslim ederek, kapanıyor.
+
+
+</blockquote></dd></dl></font>
+<dt><font size="4" color="black"><br><ins>Fonksiyon ile HTML unsarlarının ilişkisi</ins></font> </dt>
+
+<dd><font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>Javascript açısından, yukarıdaki gibi uzun fonksiyon ile tek satırlık bir metod’un farkı yoktur: ikisi de kendisinden beklenen bir değeri, bu değeri bekleyen işleme teslim etmek zorundadır. Bunu ister 150 satırlık komut kümesiyle yapsınlar, isterse tek satırlık bir komutla, Javascript, isteyen bütün fonksiyonlara ve metodlara kendi nesnelerini ve onların metodlarını kullanma imkanı verir; hatta bilgisayarın kaynaklarından yararlanmalarını bile sağlar.
+Böylece Javascript açısından Browser ve onun görüntülediği HTML belgesinin nesne olarak özelliklerine ve bilgisayarın kaynaklarını kullanmaya biraz daha yaklaşmış oluyoruz.
+Şimdi yeni bir fonksiyon yazarak, Browser’ın, bilgisayarın işletim sisteminden saat ve tarih bilgisi edinerek, Javascript’e ulaştırmasını sağlayalım. Bunun için düz yazı programınızda şu kodu yazın ve fonksiyon2.htm adıyla kaydedin.
+
+
+</blockquote></dd></dl></font>
+<br><div align="center"><IMG SRC="assets\kod10.jpg" WIDTH="500" HEIGHT="500"></div> </br>
+
+<p>Date(): getYear(), getMonth(), getDate(), getDay(), getTime(), getHours(), getMinutes(), getSeconds() bunlarda birer fonksiyondur.</p>
+ </div>
+ 
+ 
+ 
+ 
+<div class="tabPanel"><H1>Olaylar (Events)</H1><dd><font size="4" color="black" font-family="times"><dl>
+<blockquote><dt>Browser programları,
+<dd> olaylı bir yaşama sahiptir! Ya bilgisayar sistemi, ya da kullanıcı (ziyaretçi), sürekli bir takım olayların (Event) oluşmasına sebep olurlar. Ya Mouse’un bir düğmesine basılır “Click” adı verilen olay oluşur; ya klavyede bir tuşa basılır, “KeyDown” olayı oluşur. Bir HTML sayfasının yüklenmesi biterse “Load,” sayfadan çıkma işlemi tamamlanırsa “unLoad” olayı olur.
+Her Pencere, Browser veya Kullanıcı olayına karşılık, Javascript’in bir Olay Yönlendiricisi (Event Handler) vardır. Olay Yönlendirici, olayın adını taşır. Örneğin, kullanıcının Mouse’un bir düğmesini tıklaması, Click, bu olayı karşılayan ve yönlendiren metod ise onClick (tıklandığında, tıklama halinde) adını taşır. Javascript programcısı olarak bu olayların tümü bizi ilgilendirmediği gibi, nesnelerimiz de çoğunlukla bu olaylara ilgi göstermezler. Bizi yakından ilgilendiren nesneler ve onların olaylarla ilgisini ...... tabloda görebilirsiniz.
+<EVENTS.TIF --- RESİMALTI: Javascript açısından Browser Nesneleri ve karşılık verdikleri Browser ve GUI Olayları (Event).>
+Event Handler’ları, bir tür adlandırılmış ama içi boş fonksiyonlar gibi düşünebilirsiniz. Programcı olarak bize düşen, bu olay karşısında olay yöndendiricisinin ne yapmasını istediğimi belirtmekten ibarettir. Event Handler’lar, daha önceden hazırladığımız bir fonksiyonu göreve çağırabilir; veya hemen oracıkta bir Javascript metodunu da devreye sokabiliriz. Mesela:
+INPUT TYPE=”text” SIZE=50 MAXLENGTH=100 NAME=”soyadi” onChange=”denetle(this)”
+Ziyaretçi bu INPUT kutusuna soyadını yazdığında, kutunun içeriği değişmiş olacak ve bu Change (değişiklik) olayı, kendisini yöndendiren onChange sayesinde, önceden hazırladığımız “denetle()” isimli fonksiyonu çağıracaktır. Burada gördüğünüz “this” (bu) kelimesi, Javascript’e fonksiyonun istediği değer kümesi olarak bu nesnenin içeriğini vermesini bildiriyor. İlerde örneklerde bunu sık sık kullandığımızı göreceksiniz.
+
+</blockquote></dd></dt></dl></font>
+<p>Şimdi sık kullandığımız olayları ve yönlendirilcilerini daha yakından tanıyalım:</p>
+<dt><font size="4" color="black"><br><ins>onClick</ins></font> </dt>
+
+<dd><font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>Ziyaretçinin, Mosue işaretçisi tıklanabilir bir nesne üzerinde iken Mouse’nun düğmesine basması, Click olayını doğurur; bu olayı onClick yönlendirir. Düğmeler, işaretleme kutuları, radyo düğmeleri ve bağlantılar tıklanabilir. Olayın oluşması için varsayılan Mouse düğmesinin basılması ve bırakılması gerekir. Düğme basılı durursa, Click olayı gerçekleşmiş olmaz.
+onClick yönlendiricisine, “Click” olayı halinde ne yapmasını istediğinizi ait olduğu nesnenin HTML etiketi içinde bildirmeniz gerekir. Aşağıdaki kodu düz yazı programınızda yazar ve onClick01.htm adıyla kaydederseniz, onClick yönlendiricisi için program yazmış olacaksınız:
+
+</blockquote></dd></dl></font>
+<dt><font size="4" color="black"><br><ins>onSubmit</ins></font> </dt>
+
+<dd><font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>Javascript’in, HTML’i tamamladığı noktaların başında Form ve Form yoluyla elde edilecek bilgilerle ilgili işlemler gelir. Bu işlemlerin başında ise Form’daki bilgilerin Server’a gönderilmeden önce, daha Browser’da iken doğrulanması ve hatalardan arındırılması vardır. Javascript, bunu ziyaretçinin formda, Submit (Gönder) olayına yol açan herhangi bir düğmenin tıklanması halinde yapar. Bir form, ziyaretçi tarafından türü Submit olan bir düğmenin tıklanması halinde, Browser tarafından HTTP protokolü ile Server’a gönderilir. Javascript, onSubmit yönlendiricisi ile bu olaya ilişkin işler yapabilir, fonksiyonlar icra edebilir. Fakat burada dikkat edeceğiniz nokta, “Submit” olayına engel olmamak veya bu işlemi şarta bağladı iseniz, bu şartın yerine gelmesini sağlamaktır.
+
+
+</blockquote></dd></dl></font>
+<dt><font size="4" color="black"><br><ins>onReset</ins></font> </dt>
+
+<dd><font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>Formlara koyduğunuz Reset (Başa dön) düğmesi, bir Form’daki bütün bilgilerin silinmesini sağlar; Browser’ın Geri düğmesini tıklamak dahil, hiç bir eylem ziyaretçinin yanlışlıkla bastığı Sil düğmesinin sildiğini geri getiremez. Fakat programcı olarak siz böyle bir hatayı önleyebilirsiniz. Çünkü Sil düğmesinin oluşturduğu “reset” olayını yönlendiren onReset, size bu imkanı verir. Tıpkı onSubmit’teki gibi FORM etiketinize onReset tarafından devreye sokulacak bir doğrulama fonksiyonu koyabilirsiniz.
+
+</blockquote></dd></dl></font>
+<dt><font size="4" color="black"><br><ins>onMouseOver, onMouseOut</ins></font> </dt>
+
+<dd><font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>Javascript dünyasında en çok kullanılan iki “event” varsa, birincisi Mouse işaretçisinin bir nesnenin üzerine gelmesi (“MouseOver” olayı), ikincisi ise Mouse iuşaretçisinin bir nesnenin üzerinden çekilmesi (“MouseOut” olayı) sayılabilir. Bu iki olayı onMouseOver ve onMouseOut yönlendiricileri ile karşılayabiliriz. Gerçekte bu iki olayla, Mouse işaretçisi bir bağlantı satırı veya grafiğinin ve bir grafik haritasının (Map, Area) üzerine geldiği veya üzerinden çekildiği zaman ilgilenebiliriz; çünkü diğer HTML unsurları ve Javascript nesneleri ile Mouse işaretçisinin işaretleme ilişkisi yoktur.
+Bu olayı ve yönlendirilmesini, şu küçük programda görebiliriz:
+
+</blockquote></dd></dl></font>
+<br><div align="center"><IMG SRC="assets\kod11.jpg" WIDTH="500" HEIGHT="500"></div> </br>
+<dt><font size="4" color="black"><br><ins>Nesneler ve Olayları Birleştirelim</ins></font> </dt>
+
+<dd><font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>JŞimdi Javascript açısından Browser nesnelerinin neler olduğunu biliyoruz; Browser’ın Javascript açısından ne gibi olaylar oluşturduğunu ve bu olayları nasıl kullandığımızı küçük örneklerle gördük. Olaylardan yararlanarak Javascript’le nesneleri etkileyen programlar yazabiliriz; fakat bunun için nesnelerin ne gibi özellikleri olduğunu ve bunları nasıl etkileyebileceğimizi de bilmemiz gerekir. Bu bölümde nesnelerin Javascript ile etkilenebilir özelliklerinin neler olduğunu ele alacağız.
+Nesnelerin ayrıntılarına girmeden önce bir noktaya açıklık getirelim: Javascript ile bir HTML unsurunu etkileyebilmek, örneğin bir çerçevenin (Frame) içeriğini değiştirebilmek için mutlaka o nesnenin bir olaya karşılık verir olması gerekmez. Çerçeveler HTML etiketleri ile şekillenirler; herhangi bir olaya karşılık vermezler. Dolayısıyla olaylara yanıt vermeyen nesneleri, olaylara yanıt veren nesneler yoluyla etkileyebiliriz; bunun için de bir çok HTML nesnesinin özellikleri bilmemiz gerekir.
+
+</blockquote></dd></dl></font>
+
+</div>
+
+
+
+
+<div class="tabPanel"><H1>Stringler, Sayılar, Diziler ve Diziİşlemleri</H1><dd><font size="4" color="black" font-family="times"><dl>
+<blockquote><dt>Stringler,
+<dd>JavaScript dilinde string ifadeleri tek tırnak veya çift tırnak içerisine yazılır. Aşağıda string bir örnek tanımlayalım.
+
+<br>var isim="lifeacode";</br>
+Metin verisi içerisinde bulunan herhangi bir karaktere, karakter sırasının bir düşük sayısı köşeli parantez içerisinde yazılarak erişilir. Örneğin yukarıda “lifacode” değerinde “l” harfine ulaşmak için [0] ifadesi kullanılır. Aşağıda bir örnekle inceleyelim.
+
+<br>var isim="lifeacode";</br>
+<br>var karakter = isim[0];    // "l" karakterini belirtir.</br>
+Metin değişkenleri tanımlanırken kesme işareti içerisine tırnak veya tırnak işareti içerisine kesme işareti kullanabilir. Aşağıdaki örneği inceleyebilirsiniz:
+
+<br>var isim="İstanbul'un en büyük semtindeyiz.";</br> 
+<br>var isim='Yaşadığım yer "İstanbul" dur.'; </br>
+Yukarıdaki işlemi yapmak yerine kaçış işaretleri de kullanılabilir.
+
+<br>var isim="İstanbul\'un en büyük semtindeyiz."; <br/>
+<p><ins>JavaScript Length(Metin Verileri) Kullanımı</ins></p>
+
+Değişkenden sonra .length yazarak değişkende bulunan değerin karakter uzunluğu öğrenilir.  Metinsel verilerde .length özelliği kullanılır.
+
+<br>var sehir="İstanbul";</br>
+<br>var karakter = sehir.length;   // Şehir değişkeninin değerinin karakter uzunluğunun 8 olduğunu belirtir.</br>
+
+<br><ins>Değişken İçerisinde Kelime Bulmak</ins></br>
+
+Metinsel bir değer içerisinde geçen bir yazının ilk bulunduğu yer indexOf() yöntemi ile bulunur.
+
+<br>var bilgi="Lifeacode eğitim sitesi platformudur.";</br>
+<br>ilksozcuk=bilgi.indexOf("bir");  //konumun değri 10 olur.</br>
+İlk benzer kelimeyi bulmak için indexOf() kullanılırken son benzer kelimeyi bulmak için lastIndexOf() kullanılır.
+
+<br><ins>Yazı Değiştirmek</ins></br>
+
+Değişkende yer alan bir kelimeyi replace() yöntemi ile değiştiririz. İlk olarak bulunmasını istediğimiz kelimeye parantez içerisinde yer veririz. Ardından virgül koyarak yeni kelimeyi yazarız.
+
+<br>var sehir="İstanbul dünyanın en güzel şehridir.";</br>
+<br>ilksozcuk=ilksozcuk.replace("İstanbul", "Ankara");</br>
+Replace yönteminde de regular expressions (düzenli ifadeler) kullanılabilir.
+
+<br><ins>Küçük Harfleri Büyük Harf Yapmak</ins></br>
+
+toUpperCase() yöntemi ile bir metindeki bütün harfleri büyük harf yapar.
+
+<br>var ornek="Lifeacode bir eğitim sitesidir.";</br>
+<br>var ornek2 = ornek.toUpperCase();</br>
+
+<br>Ekran Çıktısı: "LİFEACODE BİR EĞİTİM SİTESİDİR."</br>
+<br><ins>Metinden İstenilen Bir Kısmı Çıkarmak</ins></br>
+
+Substring() yöntemi ile bir metin içerisinde istediğimiz bir kısmı alabiliriz. Her karakterin bir indis numarası olduğunu düşünürsek belirteceğimiz iki indis numarası arasındaki metni çekip alabiliriz. Aşağıdaki örneği inceleyebilirsiniz:
+
+<br>var ornek="Lifeacode Eğitim Platformudur."; </br>
+<br>var ornek1 = ornek.substring(0,9);</br>
+
+<br>Ekran Çıktısı: "Lifeacode"</br>
+Yukarıdaki örnekte lifeacode kelimesini elde ederiz.
+
+<br><ins>Özel Karakterler JavaScript</ins></br>
+
+Metin türü değişkenler kullanılırken kesme işareti ve tırnak işareti kullanılır. Karışıklığın önüne geçmek için kesme işaretini ve tırnak işaretini kullanırken dikkat edilmesi gerekir.
+
+<br>var ornek="Lifeacode "Eğitim" Platformudur."; </br>
+Yukarıdaki cümleyi JavaScript dili “Lifeacode” olarak algılar. Bu karışıklığın önüne geçmek için kaçış işaretleri kullanılır.
+
+<br>var ornek="Lifeacode "Eğitim" Platformudur."; </br>
+Yukarıdaki örnekte karışıklığın önüne geçmek için kaçış işaretleri kullandık.
+
+<br><ins>JavaScript Metni Dizeye Dönüştürmek</ins></br>
+
+JavaScript dilinde herhangi bir metni dizeye dönüştürürken split() yöntemi kullanılır.
+
+ 
+
+<br>var ornek="x,y,z";<br>
+<br>var ornek1=ornek.split(",");  </br>
+ </blockquote></dd></dt></dl></font>
+ <dd><font size="4" color="black" font-family="times"><dl>
+<blockquote><dt>JavaScript Sayısal Veriler
+<dd>JavaScript dilinde sayılar tamsayı ya da ondalıklı sayı şeklinde yazılabilir. Sayıları üslü sayı şeklinde de yazabiliriz. Bunun için üs miktarının önüne e harfi yazılır.
+
+<br>var sayi1 = 3.14;</br>
+<br>var sayi1 = 5;</br>
+<br>var a = 54e4; // 540000</br>
+<br>var b = 23e-4; // 0. 023</br>
+Ayrıca toString() yöntemi vardır ki değişkenler üzerinde kullanılarak sayıyı farklı sayı sistemlerine göre yazar. Örneğin toString(2) ikilik sistemde değişkene değer verir. Sayı içeren bir değişkenin sonsuz olduğunu İnfinity ya da sayı olmadığını NaN özel karakterleri gösterir. Örnek verecek olursak herhangi bir sayıyı 0’a bölersek sonuç tanımsız yani NaN olur. Başka bir örnek verecek olursak da 1.000.000 sayısını sürekli kendi ile çarparsak sonuç belli bir süre sonra İnfinity olur.
+
+<br>var a= 100 / "Elma"; //Sonuç NaN olarak tanımlanır.</br>
+<br>var b = 10 / "5"; // Sonuç 2 çıkacaktır.</br>
+Bir sayısal değişkenin sayı içerip içermediğini isNaN() yöntemiyle öğreniriz. isNaN() yönteminin kullanımı aşağıdaki gibidir;
+
+<br>var a= isNaN (3 / 0); //Sonuç yanlış(false) olarak tanımlanır</br>.</blockquote></dd></dt></dl></font> 
+
+<dd><font size="4" color="black" font-family="times"><dl>
+<blockquote><dt>JavaScript Dizi İşlemleri
+<dd>Dizi(array) bütün dillerde olduğu gibi JavaScript dilinde de birçok değişkeni içerisinde barındırır. Diziler köşeli parantez[] ile tanımlanır ve dizi elemanları virgül(,) ile ayrılır. Aşağıda örnek bir dizi tanımlayalım.
+
+<br>var dizi1 = [1, 2, 3];</br>
+<br>var dizi2 = ["istanbul","ankara","izmir"];</br>
+ 
+
+Yukarıda iki farklı türde dizi tanımladık. İlk dizimiz sayısal değerler barındırdığı için içerisinde bulunan ögeler tırnak(”) işareti ile ayrılmamıştır. İkinci dizi ise metin türünde bir dizi olduğu için  ögeler arasında tırnak(“) işaretine yer verilmiştir.
+
+Dizi oluştururken ögeler arasında karışıklığı önlemek için diziler aşağıdaki gibi tanımlanır.
+
+<br>var sehir = {</br>
+<br>"İstanbul",</br>
+<br>"Ankara",</br>
+<br>"İzmir",</br>
+<br>};</br>
+ 
+
+<ins>Dizi Değerlerini Çağırmak</ins>
+
+Dizi değerlerinin her birinin kendine özgü bir indis numarası bulunur. Bu indis numaralarını istenilen dizi ögesini çağırmak için kullanırız. Aşağıda bir dizi örneği tanımlayalım ve herhangi bir ögesini indis numarası ile çağıralım.
+
+<br>var isimler=["Hakan","Hasan","Erkan","Samet"];</br>
+<br>var isim=isimler[1];</br>
+
+<br>// Ekran Çıktısı: Hasan</br>
+
+Önemli: Yukarıda “1” indis numaralı ögeyi çağırdık. İlk sırada “Hakan” olduğu halde “Hasan” sonucunu aldık. Dizi içerisinde indis numaraları “0” değerinden başlar. O yüzden “1” indisi “Hasan” ögesinin indis numarasıdır.
+
+ 
+
+<ins>Dizideki Öge Satısını Bulmak</ins>
+
+Tanımladığımız bir dizinin kaç ögeden oluştuğunu length yöntemini kullanarak buluruz.
+
+ 
+
+<br>var markalar= ["Honda","Peugeot","Mazda"];</br>
+<br>var ögesayi= markalar.length;</br>
+
+<br>// Ekran Çıktısı: 3</br>
+ 
+
+<ins>Diziye Değer Eklemek</ins>
+
+Diziye değer eklemek için 2 farklı yöntem kullanılır. Aşağıda kod üzerinde bu yöntemleri daha detaylı inceleyelim:
+
+<br>var dizi1=["Ahmet","Mehmet","Hakan"]; // Yöntem 1</br>
+<br>dizi1.[dizi1.length]="Mustafa";  // Yöntem 2</br>
+<br>dizi1[10]="Samet";</br>
+
+Yukarıdaki örnekte ilk yöntemde length değeri 3’tür. 3 indis numarası boş olduğu için yeni eklenen öge 3 ögesinden sonra eklenir. İkinci yöntemde ise 10 değeri keyfi olarak tanımlanmıştır. 10 indis numarasına sahip değer boş olacağı için öge eklenirken hiçbir problem oluşturmaz.</blockquote></dd></dt></dl></font> 
+
+
+</div>
+
+
+<div class="tabPanel"><H1>If koşul yapıları</H1><dd><font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>Javascript veya bir başka programlama dili ile yazacağınız programda, zaman zaman programın akışını, programa bırakmanız gerekir. Programcı olarak siz, programın izleyeceği alternatif yolları belirlersiniz; fakat bu yollardan hangisini izleyeceğine, sizin koyduğunuz şartları değerlendirerek program kendisi karar verir. Programcılığın gerçek anlamda zevki de bu noktada başlar. Şimdi Javascript’in programın akışını kontrolde kullanacağınız unsurlarını tanımaya başlayalım.
+Aşağıda yazacağımız iki Javascript kodunda Browser’a, ziyaretçinin ekranındaki bir form unsurunun içini doldurtma tekniğini kullanacağız. Henüz ele almadığımız bu tekniğin ayrıntılarını FORM nesnesinin özelliklerine değinirken ele alacağız.
+</blockquote></dd></dl></font> 
+<dt><font size="4" color="black"><br><ins>If (Eğer .. ise)</ins></font> </dt>
+
+<dd><font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>Javascript programının, bir değişkenin değerine göre yönlenmesini sağlayan ilk aracı, “if” (eğer) ifadesidir. İşte size program akışını “if” yoluyla kontrol eden bir HTML sayfası:
+
+</blockquote></dd></dl></font>
+
+<dt><font size="4" color="black"><br><ins>onMouseOver, onMouseOut</ins></font> </dt>
+
+<dd><font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>Javascript dünyasında en çok kullanılan iki “event” varsa, birincisi Mouse işaretçisinin bir nesnenin üzerine gelmesi (“MouseOver” olayı), ikincisi ise Mouse iuşaretçisinin bir nesnenin üzerinden çekilmesi (“MouseOut” olayı) sayılabilir. Bu iki olayı onMouseOver ve onMouseOut yönlendiricileri ile karşılayabiliriz. Gerçekte bu iki olayla, Mouse işaretçisi bir bağlantı satırı veya grafiğinin ve bir grafik haritasının (Map, Area) üzerine geldiği veya üzerinden çekildiği zaman ilgilenebiliriz; çünkü diğer HTML unsurları ve Javascript nesneleri ile Mouse işaretçisinin işaretleme ilişkisi yoktur.
+Bu olayı ve yönlendirilmesini, şu küçük programda görebiliriz:
+
+</blockquote></dd></dl></font>
+<br><div align="center"><IMG SRC="assets\kod14.jpg" WIDTH="500" HEIGHT="500"></div> </br>
+<br><div align="center"><IMG SRC="assets\kod15.jpg" WIDTH="500" HEIGHT="500"></div> </br>
+
+<dd><font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>Bu sayfayı denetim1.htm adıyla kaydedin ve Browser’inizde açın. Şimdilik, yemek tariflerini vermediğimize aldırmayın. Daha sonra bunu yapmanın yolunu da göreceğiz. Bu sayfadaki Javascript kodunda “goster()” isimli bir fonksiyon var; bu fonksiyon kendisini harekete geçmeye çağıran nesnenin kendisine “secme” adı altında bir takım bilgiler göndermesini şart koşuyor. Sayfamızda yer alan ve adı “tarifForm” olan FORM nesnesi, kendi unsurlarından SELECT nesnesindeki her değişiklikte, “goster” fonksiyonunu harekete geçiriyor. “yemeklistesi” isimli SELECT etiketinin içindeki onChange (değişiklik halinde) isimli Javascript komutu, bir metod’tur ve burada kendi unsurlarını ve değerlerini topluca “gonder” fonksiyonuna gönderecektir. (Şimdilik bu metod ve metodu kullanırken yazdığımız THIS ifadesi üzerinde durmayın. Sırası gelecek.)
+Fonksiyonun başında iki değişken tanımlıyoruz: endeks ve secilenYemek. Endeks değişkeninin değeri, fonksiyona gönderilecek nesnelerden birinden alınıyor. Bu nesne “selectedIndex” adını taşıyor. “selectedIndex” denen şeyin, HTML belgesinin Form nesnesinin bir özelliği (property) olduğunu belirtmekle yetinelim; ayrıntılarını Form nesnesinin özelliklerini incelerken göreceğiz. Bir Form’un içinde SELECT nesnesi varsa, Browser mevcut SELECT ögelerini dizi-değişken yaparak 0’dan itiberen numaralar ve kullanıcının seçtiği SELECT ögesinin numarası “selectedIndex” adıyla bir kenara kaydeder.
+Fonksiyonumuzdaki ikinci değişken olan “secilenYemek” değişkeni de değerini, SELECT nesnesinin seçilen ögesinin metninden alıyor. Şimdilik bu tanımlar sizin için anlam ifade etmiyorsa, üzerinde durmayın; iki değişkenimize ziyaretçinin sayfada yapacağı tercihe bağlı olarak değerler kazandırdığımızı düşünün. Şimdi dikkatimizi şu satıra verelim:
+if (secilenYemek == "Adana Kebap")
+Yukarıda öğrendiğimize göre, bu satırdaki ifadede Javascript’e ne demiş oluyoruz? “Ey Javascript, ‘secilenYemek’ adlı değişkenin değerine bak; orada gördüğün metin, ‘Adana Kebap’ alfanümerik değeri ile aynı ise, bu satırdan hemen sonraki işi yap! aynı değilse, ber sonraki satıra git, oradaki işi yap!” diyoruz. Buradaki “aynı ise” ifadesini, “==” işaretleriyle sağladığımızı biliyorsunuz; “hemen sonraki iş” ifadesinin de bir karşılaştırma komutu doğru sonuç verirse, Javascript’in bu karşılaştırma komutundan hemen sonra gelen satırdaki işi yapmasından kaynaklandığını hatırlıyorsunuz. Ziyaretçi “Adana Kebap” seçeneğini seçti ise, “Seçim, Adana Kebap ise” sorgulamasının sonucu doğru olacak, ve Javascript
+document.tarifForm.tarif.value=secilenYemek + " seçtiniz! Bravo!"
+komutunu icra ederek, ekrana “secilenYemek” değişkeninin değeri yazacak ve buna “seçtiniz! Bravo!” kelimelerini ekleyecektir. Sorgulamanın sonucu doğru değil ise, yani ziyaretçi Adana Kebap’ı seçmemişse, Javascript bir sonraki satırına atlayacaktır. Burada “bir sonraki satır” ile şu anda içinde bulunduğumuz “if” ifadesinin açılan ve kapanan süslü parantezle belirlenen sınırının bittiği yeri kastediyoruz. Yazma kolaylığı bakımından ve açtığımız parantezi kapattığımızdan emin olmak için süslü parantezleri ayrı satırlara yazarız. Ama bu şart değildir. Yani istese idik, burada üç satıra yayılan “sonraki satır” aslında tek satırda yazılabilirdi.
+Javascript’in, ziyaretçinin Adana Kebap’ı seçmemesi halinde atlayacağı bir sonraki satırda da bir “if” ifadesi var. Javascript bu kez bu sorgulamanın sonucunu alacak ve bu sorgulama doğru sonuç verirse (yani ziyaretçi Yoğurtlu İskender’i seçmişse), hemen sonraki satırı, seçmemişse, bir sonraki satırı icra edecektir. Böylece dört sorgulamayı da bitiren Javascript, çalışmasına son verecektir. Taa ki, ziyaretçi, yeni bir tercih yapıncaya kadar. SELECT etiketinin içindeki onChange (değişiklik halinde) yönlendiricisi, bu kutuda olacak her değişiklikte, formun SELECT nesnesinin ögelerini topluca “gosder” fonksiyonuna gönderecektir.
+Bir “if” sorgusunun içinde bir veya daha fazla “if” bulunabilir. Böyle iç-içe “if” ifadesi yazarsanız, herbirinin icra alanının başladığı ve bittiği yeri gösteren süslü parantezlerine dikkat edin.
+
+</blockquote></dd></dl></font>
+
+<dt><font size="4" color="black"><br><ins>If ... Else (Eğer .. Diğer)</ins></font> </dt>
+
+<dd><font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>Kimi zaman bu kadar çok seçeneğe tek tek “if” ifadesi yazmak gerekmeyen durumlar olabilir. Javascript’e “Eğer şu değişkenin değeri şu işe şunu yap, diğer bütün durumlarda ise şunu yap!” demek istiyebilirsiniz. “If... Else” ifadesi ile bunu sağlarız.
+<br>if (secilenYemek != "Adana Kebap")</br>
+	<br>{</br>
+	<br>document.tarifForm.tarif.value=secilenYemek + " tarifini veremiyoruz!"</br>
+	<br>}<br/>
+	<br>else</br>
+	<br>{</br>
+	<br>document.tarifForm.tarif.value="Adana Kebap Tarifini asağıda sunuyoruz:"</br>
+	<br>}</br>
+	Bu sayfayı denetim2.htm adıyla kaydedin ve Browser’inizde açın. Şimdi dikkatimizi şu satıra verelim:
+if (secilenYemek != "Adana Kebap")
+Yukarıda öğrendiğimize göre, bu satırdaki ifadede Javascript’e “Ey Javascript, ‘secilenYemek’ adlı değişkenin değerine bak; orada gördüğün metin, ‘Adana Kebap’ alfanümerik değeri ile aynı değil ise, bu satırdan hemen sonraki işi yap!” demiş oluyoruz. Buradaki “aynı değil ise” ifadesini, “!=” işaretleriyle sağlıyoruz; “hemen sonraki iş” ifadesinin de bir karşılaştırma komutu doğru sonuç verirse, Javascript’in bu karşılaştırma komutundan hemen sonra gelen satırdaki işi yapmasından kaynaklandığını hatırlıyorsunuz. Ziyaretçi “Adana Kebap” seçeneğini seçmedi ise, “Seçim, Adana Kebap değil ise” sorgulamasının sonucu doğru olacak, ve Javascript
+“document.tarifForm.tarif.value=secilenYemek + " tarifini veremiyoruz!"
+komutunu icra ederek, ekrana “secilenYemek” değişkeninin değeri yazacak ve buna “tarifini veremiyoruz!” kelimelerini ekleyecektir. Sorgulamanın sonucu doğru değil ise, yani ziyaretçi Adana Kebap’ı seçmişse, Javascript sorgulamanın sonucunun “diğer” sınıfına girdiğini anlayacak ve “Else” ifadesini icra edecektir. Yani ekrana “Adana Kebap Tarifini aşağıda sunuyoruz:” yazacaktır. (Tarifi vermediğimizin üzerinde de durmayın. İlerde bu tür uzun ifadeleri Javascript ile sayfaya yazdırmanın yollarını da göreceğiz.)
+Özetlersek, “if” ifadesinde ileri sürdüğünüz şart doğru ise ilk komut dizisi, doğru değilse “Else” bölümündeki komut dizisi icra edilir.
+
+
+</blockquote></dd></dl></font>
+ </div>
+ 
+ 
+ 
+ 
+<div class="tabPanel"><H1>Döngüler-Tip Dönüşümleri</H1><dd><font size="4" color="black" font-family="times"><dl>
+<blockquote><dt>Program Döngü Denetimi
+<dd>
+Javascript’te bazen işler yukarıdaki örnekte olduğu gibi açık ve belirgin şartlara bağlı ve bir kere icra edilecek türden olmayabilir. Javascript, bir işi belirli (veya kendi belirleyeceği) kere yapmasını isteyebilirsiniz. Bu tür tekrarlanan işleri Javascript’e bir kaç satırlık bir kodla yaptırtmak çoğu kez bizi sayfalar dolusu kod yazmaktan kurtarır.
+</blockquote></dd></dt></dl></font> 
+<dt><font size="4" color="black"><br><ins>“for” döngüsü</ins></font> </dt>
+
+<dd><font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>Diyelim ki, sitenizde santigrad dereceyi fahrenhayt dereceye çeviren tablo sunmak istiyorsunuz. 0’dan 100’e kadar bütün santigrad derecelerin (fahrenhayt = santigrad * 9 / 5 + 32 ) formülüyle karşılığını bulup, bir tabloya yazabilirsiniz. Hesabı yapmanın güçlüğünün yanı sıra, HTML kodunuz tam 100 adet TRTD..*/TD- TD../TD-/TR kodu içerecektir. Oysa bunu iki satırlık bir Javascript kodu ile Browser’a yaptırabilirsiniz. Aşağıdaki kodu, dongu1.htm adıyla kaydedin ve Browser’ınızda açın:
+
+</blockquote></dd></dl></font>
+<br><div align="center"><IMG SRC="assets\kod16.jpg" WIDTH="500" HEIGHT="500"></div> </br>
+
+
+<dt><font size="4" color="black"><br><ins>“for” döngüsü</ins></font> </dt>
+<dd><font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>Burada “for” ifadesiyle tekrarlanan bir döngü oluşturuyoruz. “for” döngüsüne geçmeden Javascript’e, sayfaya bir kaç HTML komutu göndermesini bildiriyoruz; bu komutlar sayfada bir tablo başlatıyor; tablonun birinci sırasına iki kutu oluşturarak, içlerine “Santigrad” ve “Fahrenhayt” yazıyor. Şimdi asıl, “for” ifadesi üzerinde duralım:
+“for” ile oluşturacağımız döngü, bir sayaca göre ilerler. Burada sayaç olarak “santigrad” adında bir değişken oluşturuyoruz, Javascript’e “Santigrad adında bir değişken yap, içine 0 değerini koy; ve bu değişken 100’den küçük veya 100’e eşit ise bazı işler yap!” demiş oluyoruz. Bu arada Javascript, diğer dillerin benzeri komutuna göre bize bir kolaylık sağlıyor: Javascript’in her döngü yapacağı işten sonra santigrad’ın mevcut değerine 1 eklemesini aynı satırda ve kolayca sağlıyoruz. “for” işleminin başladığını belirten açılan süslü parantezden sonra Javascript’e her döngüde yapacağı iki işi bildiriyoruz:
+	fahrenhayt = santigrad * 9 / 5 + 32
+Bu komutla Javascript, fahrenhayt” adını verdiği bir değişken oluşturuyor ve ilk değer olarak, santigrad değişkeninin değerini 9 ile çarpıp, 5’e bölüyor, bulduğu sayıya 32 ekliyor. ilk turda, santigrad değişkeninin değeri 0 olduğuna göre, fahrenhayt değişkeninin değeri 32 olarak bulunuyor; ve Javascript ikinci işe geçiyor:
+document.writeln("TR>TD" + santigrad + "/TD>TD" + fahrenhayt + "/TD/TR")
+Bu iş ise, sayfaya bir tablo sırası ile bir tablo kutusu göndermek; bu kutunun içine santigrad değişkeninin değerini yazmak; sonra bu kutuyu kapatıp yeni bir kutu açmak; bu kutunun içine fahrenhayt değişkenini değerini yazarak, kutuyu ve tablo sırasını kapatmaktan ibaret.
+Javascript, birinci turu bitirdiğinde, “for” komutunun tayin ettiği ölçüde sayaç değişkeninin arttırıp veya azaltıp, ikinci tura başlayacaktır. Bu ne zamana kadar böyle devam edip gidecektir? Sayaç değişkeninin değeri, tayin ettiğiniz sınına ulaşıncaya kadar. Nedir bu sınır: santigrad değişkeninin değerinin 100’e eşitlenmesi. Bu kadar uzun bir tablo vermek istemiyorsanız, bu değeri istediğiniz bir sayıya indirebilirsiniz ve sayacı birer birer arttırma yerine, mesela beşer beşer attırabilirsiniz. Sayacı beşer-beşer arttırmak için “for” komutunun son argümanını “santigrad +=5” şeklinde yazmalısınız.
+
+</blockquote></dd></dl></font>
+
+<dt><font size="4" color="black"><br><ins>Şartlı döngü: while</ins></font> </dt>
+
+<dd><font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>JJavascript kodu yazarken öyle durumlar olabilir ki, programın sayaç değişkeninin her değeri için yapmasını istediğiniz işi yapmasındansa, sadece belirli bir şart karşılanıyorsa yapmasını tercih edebilirsiniz. Bunu “while” (...iken) ifadesiyle sağlarız. Bu yöntemle Javascript’e “filanca işi yap, ama falanca şart varsa (veya yoksa)” demiş oluruz.
+“while” ile kuracağınız döngünün şartı rolünü oynayacak değişkenin daha önceden oluşturulması, içeriğinin başka bir yöntemle belirlenmesi ve değiştirilmesi gerekir; “for” döngüsünün aksine “while” şartlı döngüsü bunu sizin için otomatik olarak yapmaz. Ayrıca koyduğunu şarta bağlı olarak, “while” döngüsü sırasında yapılmasını istediğiniz iş hiç yapılmayabilir.
+Diyelim ki, bir elektronik ticaret siteniz var; ve müşteri adayı ziyaretçileriniz, bazı malları Web sayfanızda toptan ısmarlayabilirler. Böyle bir siparişi alabilmek için, o maldan stokunuzda yeterli miktarda bulunması gerekir. Aşağıdaki kodu dongu2.htm adıyla kaydederseniz, ısmarlanan bir miktar üzerinden kaç sipariş karşılayabileceğini sayfanız otomatik olarak hesaplayacaktır.
+
+</blockquote></dd></dl></font>
+<br><div align="center"><IMG SRC="assets\kod17.jpg" WIDTH="500" HEIGHT="500"></div> </br>
+<br><div align="center"><IMG SRC="assets\kod18.jpg" WIDTH="500" HEIGHT="500"></div> </br>
+
+<dt><font size="4" color="black"><br><ins>do...while</ins></font> </dt>
+
+<dd><font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>“while” döngüsünün, koyduğunuz şarta göre bazen hiç icra edilmeyebileceğini söyledik. Yukarıdaki örnekte müşteri öyle bir rakam verir ki, sipariş miktarı stoktan yüksek olduğu için, hesaplama hiç yapılmaz ve müşteriye kaç parti sevkiyat yapacağımızı değil, sevkiyat yapamayacağımızı bildiririz. Fakat bazı durumlarda döngünün bir kere işlemesi, fakat ikinci ve daha sonraki seferler için bir değişkenin değerine bakması gerekebilir. Akla gelecek ilk örnek, bir elektronik ticaret sitesinde, müşteriye bir malı almak isteyip istemediği sorusudur. Bu soruyu bir kere sormak zorundayız; müşteri bu soruya “Hayır!” yanıtını verirse, alış-veriş sorusunu soran döngüyü durdurmamız gerekir; müşteri alışverişe devam etmek istediğini bildirirse, döngü devam edecek ve müşteriye alış-veriş sorusu yeniden sorulacaktır.
+Bunu, do...while (Yap ... iken) komut grubuyla yapabiliriz. Do (Yap) komutu bir kere icra edilir ve ondan sonra while (..iken) şartı aranır. Bu şart yerine geliyorsa, Do’daki komut yeniden icra edilir, şartın değişip değişmediğine yeniden bakılır.
+Düz yazı programında aşağıdaki kodu yazın ve dongu5.htm adıyla kaydedin:
+
+
+</blockquote></dd></dl></font>
+<br><div align="center"><IMG SRC="assets\kod19.jpg" WIDTH="500" HEIGHT="500"></div> </br>
+
+<dt><font size="4" color="black"><br><ins>“Break” ve “Continue”</ins></font> </dt>
+
+<dd><font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>Şartlı döngüde, tekrar eden iş, şartın yerine geldiği noktada kendiliğinden kesilecektir. Aynı otomasyonu “for” döngüsünde break (kes) ve continue (devam et) komutlarıyla biz de sağlayabiliriz.
+Javascript, Break ile karşılaştığı anda döngüyü keser ve icraata döngüden sonraki ilk ifadeden devam eder. Continue ise Javascript’in döngünün o andaki adımını durdurup, döngünün başına dönmesini sağlar; döngü baştan devam eder.
+dongu1.htm adıyla kaydettiğiniz dosyada, fahrenhayt’ı hesaplattırdığınız komutla, bunu HTML belgesine yazdırdığınız komut arasına şu satırı koyarak, dosyayı, dongu3.htm adıyla saklayın.
+if (santigrad == 13) continue
+Browser’da incelediğinizde, Fahrenhayt derecenin 13 santigrad derece için hesaplanmadığını göreceksiniz. Eklediğiniz satırdaki “continue” komutu, santigrad 13’e eşitlendiğinde, döngüyü olduğu yerde keserek, bir sonraki adımdan yeniden başlattı.
+Eklediğiniz bu satırdaki “continue” kelimesini “break” diye değiştirir, dosyayı dongu4.htm adıyla kaydeder ve sayfayı Browser’da açarsanız, bu kez listenin 12’de kesildiğini göreceksiniz; çünkü break komutu döngüyü olduğu yerde durdurup, Javascript’i bir sonraki adımdan devama zorladı.
+
+
+</blockquote></dd></dl></font>
+<dt><font size="4" color="black"><br><ins>“Switch”</ins></font> </dt>
+
+<dd><font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>Javascript’in switch (değiştir) komutu, programın bir değişkenin değerine göre, belirli bir işi yapmasını sağlar. Sözgelimi, elektronik satış sitenizde, müşteri-ziyaretçiniz, alacağı gömleğin beden ölçüsünü seçecek ve siz de bu ölçüye göre, siparişi kaydedecek ve müşteriye siparişin alındığını bildireceksiniz. Javascript programının mantığı şöyle olacak: “Müşteri büyük beden’i seçti ise Büyük bedenle ilgili işleri yap; küçük bedeni seçti ise küçük bedenle ilgili işleri yap; orta bedeni seçti ise orta bedenle ilgili işleri yap!"
+Javascript’e switch komutu, bir veri kümesi gösterilerek verilir ve bu veri kümesi içinde hangi değere göre ne yapacağı case (halinde) ifadesiyle bildirilir: “Değerin A olması halinde şu işi yap; değerin B olması halinde şu işi yap!” gibi. Şimdi şu kodu düzyazı programında yazın ve dosyayı dongu6.htm adıyla kaydedin:
+
+
+</blockquote></dd></dl></font>
+<dt><font size="4" color="black"><br><ins>“TİP DÖNÜŞÜMLERİ”</ins></font> </dt>
+
+<dd><font size="4" color="black" font-family="times"><dl>
+<blockquote>
+<dd>Number () bir Number'a, String () bir String'e, Boolean () bir Boolean'a dönüştürür.
+
+</blockquote></dd></dl></font>
+<p>JavaScript'te değer içerebilen 5 farklı veri türü vardır:</p>
+ <ul>
+      <li>string</li>
+      <li>number</li>
+      <li>boolean</li>
+	  <li>object</li>
+	  <li>function</li>
+   </ul>
+   <p>6 tür nesne vardır:</p>
+ <ul>
+      <li>Object</li>
+      <li>Date</li>
+      <li>Array</li>
+	  <li>String</li>
+	  <li>Number</li>
+	  <li>Boolean</li>
+   </ul>
+   <p>Ve değerler içeremeyen 2 veri türü:</p>
+<ul>
+      <li>null</li>
+      <li>underfined</li>
+	  </ul>
+	  <p>typeofBir JavaScript değişkeninin veri türünü bulmak için operatörü kullanabilirsiniz .</p>
+	  <br><div align="center"><IMG SRC="assets\kod20.jpg" WIDTH="500" HEIGHT="500"></div> </br>
+	  <br><div align="center"><IMG SRC="assets\kod21.jpg" WIDTH="500" HEIGHT="500"></div> </br>
+ </div>
+ 
+ 
+ 
+ 
+<div class="tabPanel"><H1>Çalışma yapısı ve genel mimarisi</H1><dd><font size="4" color="black" font-family="times"><dl>
+<blockquote><dt>JavaScript ile VBScript
+<dd>1998 yılında Netscape pazarın tek hakimi idi. Microsoft bu alanının önemini geç anladı. Gerçekten, belge çözümleyicisinin bir adım sonrası işletim sistemi idi. Microsoft’un tahtı kesin tehlikede idi. Bu yüzden bu alanı tüm gücünü vererek girdi. İşletim sistemine bağlı olarak verdiği çözümleyicisi, Microsoft Internet Explorer ile sırası ile hem Java JavaScript’i engelledi. Yerine koydukları VBScript ise hiç bir zaman yaygınlık kazanmadı. Bu arada web yazarları son derece zor günler yaşadılar. Tüm belge çözümleyiciler tarafından desteklenen web sitesi yazımı Kara Büyü gibi gizemli bir hale geldi. Sonuçta, bu süreç Ocak 1998 ‘de açık kaynak Mozilla projesini başlatarak Netscape’in yarışı terk etmesi ile sonuçlandı. Netscape 24 Kasım 1998 AOL tarafından satın alınarak ticareti terk etti. Mozilla projesi ise yoluna devam etti ve bugün Windows kullanıcılarının yaklaşık yüzde onunun kullandığı Firefox belge çözümleyicilerini üretmeye devam etmektedir. Belge çözümleyicisi savaşları artık geride kalmıştır. Her iki tarafta da standartlara uymaya çalışmaktadır. Micorosft’un uyumsuz davranışları, ne yazık ki, Java ve JavaScript programlama dillerine çok zarar vermiştir.</blockquote></dd></dt></dl></font>
+<p>JavaScript programlama dili, üç kısımında oluşmaktadır. Bunlar,</p>
+ <ul>
+      <li>Temel Kısım (CORE) // Standartdizasyonunu ECMA Yapmaktadır.</li>
+      <li>Belge Çözümleyici (BOM) (Browser Object Model)  // Standardı yok.</li>
+      <li>Belge Nesne Modeli (DOM) (Document Object Model) // Standardını W3C yapmaktadır.</li>
+   </ul>
+<br><div align="center"><IMG SRC="assets\kod2.png" WIDTH="500" HEIGHT="500"></div> </br>
+<br><div align="center"><IMG SRC="assets\kad5.png" WIDTH="500" HEIGHT="500"></div> </br>
+<br><div align="center"><IMG SRC="assets\kod3.png" WIDTH="500" HEIGHT="500"></div> </br>
+<br><div align="center"><IMG SRC="assets\kod4.png" WIDTH="500" HEIGHT="500"></div> </br>
+<br><div align="center"><IMG SRC="assets\kod6.png" WIDTH="500" HEIGHT="500"></div> </br>
+<p>  JavaScript motorları bir tür modele dayalı uygulamalar gerçekleştirir ve aynı zamanda bunları optimize etmeye çalışırlar.</p>
+Aslında çok basit ifade ile anlatırsak bir kovaya alabileceğinden fazla su doldurulması sonucu suyun dışarı taşması durumu olarak özetlenebilir.
+<br><div align="center"><IMG SRC="assets\kod1.gif" WIDTH="500" HEIGHT="500"></div> </br>
+ </div>
+ 
+ 
+ 
+ 
+
+</div>
+
+<script src="js/javaScript.js"></script>
+</body>
+</html>

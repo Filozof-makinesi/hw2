@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../js/javasckullanici.js"></script>
+<title> Dinamik Eleman Ekleme </title>
+<style>
+form{
+color:yellow;
+
+}
+
+
+</style>
+</head>
+
+<body  background="../assets/form.jpg">
+
+
+
+<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+
+Adınız:<input type="text" name="txtIsim"  size="24">
+<br><br>
+Şifreniz:<input type="password" name="txtSifre">
+<br><br>
+Email:<input type="email" name="txtEmail">
+<br><br>
+TC:<input type="number" name="txtTc">
+<br><br>
+Telefon no:<input type="tel" name="txtNo">
+<br><br>
+Cinsiyetiniz:<input type="radio" name="cinsiyet">Erkek <input type="radio" name="cinsiyet">Bayan
+<br><br>
+Bildiğiniz Diller:<input type="checkbox" name="dil1">İngilizce <input type="checkbox" name="dil2">Almanca
+<br><br>
+Yaşadığınız İl:<select>
+<option>Sivas</option>
+<option>Ankara</option>
+<option>İzmir</option>
+<option>İstanbul</option>
+</select>
+<br><br>
+Açık Adresiniz:
+<br>
+<br>
+<textarea rows="5" cols="30"></textarea>
+<br><br>
+<input type="submit" name="btnGonder" value="Gönder">
+<input type="reset" name="btnTemizle" value="Temizle">
+</form>
+
+
+
+</body>
+</html>
