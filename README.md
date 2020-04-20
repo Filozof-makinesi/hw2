@@ -2,10 +2,10 @@
  JavaScript Dom-Nesne-Fonksiyon
 ! [UzaktanLab1-Gif](hw2/outputs/2.hafta.gif)
 
-#Dinamik Eleman Ekleme
-1-JavaScript kodu içerisinde 2 tane fonksiyon oluşturuldu.
-Biri Element eklemek için oluşturulan fonksiyon diğeri Element Kaldırmak için oluşturulan fonksiyondur.
-2-Element eklemede değişken tanımlanır. Bunun için “var” tag kullanılır. “Var” değer atamadan sadece değişken oluşturma işleminde Variable Declaration denilmektedir. 
+# Dinamik Eleman Ekleme
+! 1-JavaScript kodu içerisinde 2 tane fonksiyon oluşturuldu.
+ !  Biri Element eklemek için oluşturulan fonksiyon diğeri Element Kaldırmak için oluşturulan fonksiyondur.
+! 2-Element eklemede değişken tanımlanır. Bunun için “var” tag kullanılır. “Var” değer atamadan sadece değişken oluşturma işleminde Variable Declaration denilmektedir. 
 3-Daha sonra bu oluşturulan değişkene DOM yapısında olan (document.createElement()) fonksiyonu ile Belge nesnesi temsil eden web sayfanızı oluşturmada “document” ifadesi kullanılır.Bir HTML sayfasındaki herhangi bir öğeye erişmek istiyorsanız, her zaman document nesnesi ile  erişmeye çalışılır.
 4-Html element eklemek içinde  “createElement “ ifadesi kullanılır.
 5-Tekrar bir değişken oluşturarak buna da document.createTextNode metodu ifadesi ile yeni bir TEXT_NODE (metin düğümü) oluşturulması sağlanır.
